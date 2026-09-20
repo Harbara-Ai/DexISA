@@ -1,0 +1,181 @@
+{
+  "formal": false,
+  "purpose": "single_pair_comparison",
+  "requested_model": "gpt-5.6-luna",
+  "thread_id": "01a0be3e-94aa-76b0-a664-ea9fc7048bb9",
+  "reasoning_effort": "low",
+  "runtime": {
+    "userAgent": "Codex Desktop/0.155.0-alpha.9.2 (Windows 10.0.26200; x86_64) dumb (instrumentation_sanity; 1.0)",
+    "codexHome": "$CODEX_HOME",
+    "platformFamily": "windows",
+    "platformOs": "windows"
+  },
+  "t_episode_prepared": {
+    "unix_ns": 1789898167251944000,
+    "monotonic_ns": 1634922559272700
+  },
+  "t_first_agent_request_dispatch": {
+    "unix_ns": 1789898167551570700,
+    "monotonic_ns": 1634922859703600
+  },
+  "t_terminal_outcome": {
+    "unix_ns": 1789898209669332800,
+    "monotonic_ns": 1634964977131000
+  },
+  "sim_time_start": 0.18800000000000014,
+  "sim_time_end": 2.2879999999999696,
+  "physical": {
+    "outcome": "SUCCESS",
+    "claimed": "success",
+    "shield_failure": null,
+    "physical_success": true,
+    "recovery_attempts": 0,
+    "action_failures": 0,
+    "max_group_force": 0.40531959385809935,
+    "max_object_drift": 0.0031222156774180897,
+    "task_baseline_verified": false,
+    "hold_survived": false,
+    "tool_calls": 5,
+    "state_queries": 0,
+    "T_tool": 0.32178759993985295,
+    "T_physical_sim": 2.2879999999999696,
+    "T_sim_compute": 0.32089189998805523,
+    "first_contact_time": 1.9880000000000015,
+    "contact_to_action_end_s": 0.29999999999996807,
+    "mujoco_warnings": 0,
+    "final_state": {
+      "time": 2.288,
+      "q": [
+        0.006276,
+        0.007516,
+        0.003025,
+        0.000496,
+        1.142171,
+        0.301282,
+        1.749724,
+        1.400221,
+        0.000738,
+        -7.5e-05,
+        0.000126,
+        4e-05,
+        0.00054,
+        -0.001112,
+        8.5e-05,
+        3.5e-05,
+        0.000604,
+        -0.001618,
+        0.000105,
+        3.8e-05
+      ],
+      "contacts": [
+        {
+          "group": "primary",
+          "normal_load": 0.0424,
+          "position": [
+            0.012368,
+            0.053843,
+            0.271965
+          ]
+        },
+        {
+          "group": "primary",
+          "normal_load": 0.0438,
+          "position": [
+            0.012369,
+            0.053843,
+            0.272499
+          ]
+        }
+      ],
+      "object_relative_pose": {
+        "position": [
+          0.027555,
+          0.066795,
+          -0.090016
+        ],
+        "quaternion": [
+          0.99992,
+          3.6e-05,
+          0.000534,
+          0.012665
+        ]
+      },
+      "phase": "SUCCESS",
+      "active_modes": [],
+      "grasp": "MARGINAL",
+      "activated": null,
+      "mode_health": "INACTIVE",
+      "event": null,
+      "task_success": true,
+      "baseline_verified": false,
+      "hold_survived": false
+    }
+  },
+  "terminal_observation": {
+    "time": 2.288,
+    "contacts": [
+      {
+        "group": "primary",
+        "normal_load": 0.0424,
+        "position": [
+          0.012368,
+          0.053843,
+          0.271965
+        ]
+      },
+      {
+        "group": "primary",
+        "normal_load": 0.0438,
+        "position": [
+          0.012369,
+          0.053843,
+          0.272499
+        ]
+      }
+    ],
+    "object_relative_pose": {
+      "position": [
+        0.027555,
+        0.066795,
+        -0.090016
+      ],
+      "quaternion": [
+        0.99992,
+        3.6e-05,
+        0.000534,
+        0.012665
+      ]
+    },
+    "phase": "SUCCESS",
+    "active_modes": [],
+    "grasp": "MARGINAL",
+    "activated": null,
+    "mode_health": "INACTIVE",
+    "event": null,
+    "task_success": true,
+    "baseline_verified": false,
+    "hold_survived": false,
+    "joint_positions": {
+      "4": 1.142171,
+      "5": 0.301282,
+      "6": 1.749724,
+      "7": 1.400221
+    },
+    "joint_velocities": {
+      "4": 0.000113,
+      "5": -0.003106,
+      "6": -0.004607,
+      "7": -2e-06
+    },
+    "primary_normal_load_N": 0.08615514088343687,
+    "object_drift_m": 0.0031222156774180897,
+    "max_object_drift_m": 0.0031222156774180897,
+    "collision": false,
+    "shield_failure": null,
+    "required_contact_established": true
+  },
+  "errors": [],
+  "turn_completed": true,
+  "benchmark_timeout_triggered": false,
+  "explicit_agent_stop": false
+}

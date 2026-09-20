@@ -1,0 +1,58 @@
+[
+  {
+    "type": "function",
+    "name": "describe_hand",
+    "description": "Read joint names, limits, axes and basic kinematics once; subsequent calls do not repeat metadata. Returns structured JSON; display the entire returned value with text(result) in the native code transport.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "get_state",
+    "description": "Read compact canonical joint positions, contact/load, object drift and collision/safety state. Does not advance simulation. Returns structured JSON; display the entire returned value with text(result) in the native code transport.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "set_joint_targets",
+    "description": "Set any number of indexed joint targets in radians together and run the existing finite-effort position servos for duration seconds. Unspecified joints retain prior targets. No IK, contact advance or contact-triggered stopping. Returns current compact state at the action boundary. Returns structured JSON; display the entire returned value with text(result) in the native code transport.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "targets": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "duration": {
+          "type": "number",
+          "minimum": 0.02,
+          "maximum": 2
+        }
+      },
+      "required": [
+        "targets",
+        "duration"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "stop",
+    "description": "Hold the measured posture using the existing low-level API; return current compact state. Returns structured JSON; display the entire returned value with text(result) in the native code transport.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  }
+]

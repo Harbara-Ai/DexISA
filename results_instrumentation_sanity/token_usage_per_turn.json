@@ -1,0 +1,26 @@
+[
+  {
+    "decision_cycle": 1,
+    "turn_id": "01a0be2a-984e-7ec2-ba40-5b1296a008a2",
+    "response_id": "resp_0fb7153986ce14de016aafa89b832487d0a312b9c7dda47878",
+    "usage_source": "native_turn_usage",
+    "input_tokens": 3566,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 61,
+    "reasoning_output_tokens": 14,
+    "total_tokens": 3627
+  },
+  {
+    "decision_cycle": 2,
+    "turn_id": "01a0be2a-984e-7ec2-ba40-5b1296a008a2",
+    "response_id": "resp_0fb7153986ce14de016aafa89e9fb887d0a9858268fc868baa",
+    "usage_source": "native_turn_usage",
+    "input_tokens": 3650,
+    "cached_input_tokens": 2816,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 4,
+    "reasoning_output_tokens": 0,
+    "total_tokens": 3654
+  }
+]

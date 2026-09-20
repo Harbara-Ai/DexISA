@@ -1,0 +1,8 @@
+{
+  "initial_state_equivalent": true,
+  "direct_initial_state_sha256": "e7c3d742f91af5ebcf841c73d197f3da6ec26e3229697661cbfaa056aae33ed0",
+  "skill_initial_state_sha256": "e7c3d742f91af5ebcf841c73d197f3da6ec26e3229697661cbfaa056aae33ed0",
+  "scene_xml_sha256": "8bc958899bcbc3b3a3df758d635b266609613f323196cd7ddd7bfda9e3c9e633",
+  "skill_scene_xml_sha256": "8bc958899bcbc3b3a3df758d635b266609613f323196cd7ddd7bfda9e3c9e633",
+  "shared_sources_match": true
+}

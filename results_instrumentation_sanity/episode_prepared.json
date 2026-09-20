@@ -1,0 +1,9 @@
+{
+  "formal": false,
+  "purpose": "instrumentation_sanity_check",
+  "timestamp": {
+    "unix_ns": 1789896857565252400,
+    "monotonic_ns": 1633612873812300
+  },
+  "sim_time_start": 0.18800000000000014
+}

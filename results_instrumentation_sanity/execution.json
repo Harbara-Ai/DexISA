@@ -1,0 +1,94 @@
+{
+  "formal": false,
+  "purpose": "instrumentation_sanity_check",
+  "thread_id": "01a0be2a-97ed-71c1-b6c2-6ae0781bfe1c",
+  "runtime_version": {
+    "userAgent": "Codex Desktop/0.155.0-alpha.9.2 (Windows 10.0.26200; x86_64) dumb (instrumentation_sanity; 1.0)",
+    "codexHome": "$CODEX_HOME",
+    "platformFamily": "windows",
+    "platformOs": "windows"
+  },
+  "requested_model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "t_episode_prepared": {
+    "unix_ns": 1789896857565252400,
+    "monotonic_ns": 1633612873812300
+  },
+  "t_first_agent_request_dispatch": {
+    "unix_ns": 1789896857669154500,
+    "monotonic_ns": 1633612977516100
+  },
+  "t_terminal_outcome": {
+    "unix_ns": 1789896862190774500,
+    "monotonic_ns": 1633617499935000
+  },
+  "sim_time_start": 0.18800000000000014,
+  "sim_time_end": 0.8640000000000007,
+  "physical": {
+    "outcome": "SUCCESS",
+    "claimed": "success",
+    "shield_failure": null,
+    "physical_success": true,
+    "recovery_attempts": 0,
+    "action_failures": 0,
+    "max_group_force": 0.10514787915926821,
+    "max_object_drift": 1.0921608149902198e-05,
+    "task_baseline_verified": false,
+    "hold_survived": false,
+    "tool_calls": 1,
+    "state_queries": 0,
+    "T_tool": 0.16983120003715158,
+    "T_physical_sim": 0.8640000000000007,
+    "T_sim_compute": 0.0934906005859375,
+    "first_contact_time": 0.8640000000000007,
+    "contact_to_action_end_s": 0.0,
+    "mujoco_warnings": 0,
+    "final_state": {
+      "time": 0.864,
+      "contacts": [
+        {
+          "group": "primary",
+          "normal_load": 0.0522,
+          "position": [
+            0.005968,
+            0.059117,
+            0.252077
+          ]
+        },
+        {
+          "group": "primary",
+          "normal_load": 0.0529,
+          "position": [
+            0.005968,
+            0.059117,
+            0.252246
+          ]
+        }
+      ],
+      "object_relative_pose": {
+        "position": [
+          0.025,
+          0.065,
+          -0.09001
+        ],
+        "quaternion": [
+          1.0,
+          0.0,
+          -0.0,
+          -0.0
+        ]
+      },
+      "phase": "SUCCESS",
+      "active_modes": [],
+      "grasp": "MARGINAL",
+      "activated": null,
+      "mode_health": "INACTIVE",
+      "event": null,
+      "task_success": true,
+      "baseline_verified": false,
+      "hold_survived": false
+    }
+  },
+  "errors": [],
+  "turn_completed": true
+}

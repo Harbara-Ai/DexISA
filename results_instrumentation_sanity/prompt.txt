@@ -1,0 +1,4 @@
+Establish the requested contact safely using the available semantic robot tools.
+Use the minimum necessary tool calls.
+Stop once success or terminal failure is established.
+Do not explain; use tools directly.

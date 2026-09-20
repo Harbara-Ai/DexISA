@@ -1,0 +1,91 @@
+{
+  "task": "Establish legal primary-group contact with the supported cylinder and stop. Keep object drift below 15 mm, no overload or unrelated collision.",
+  "object": {
+    "nominal_world_position": [
+      0.025,
+      0.065,
+      0.26
+    ],
+    "radius": 0.02,
+    "height": 0.025,
+    "mass": 0.06,
+    "friction": 1.2
+  },
+  "safety": {
+    "group_force_limit_N": 4.0,
+    "joint_effort_caps": "original model; unchanged",
+    "max_recovery": 1
+  },
+  "groups": [
+    "primary"
+  ],
+  "target_primary_site_world": [
+    -0.006999999999999999,
+    0.065,
+    0.26
+  ],
+  "palm_native_world_pose": {
+    "position": [
+      0.0,
+      0.0,
+      0.35
+    ],
+    "quaternion": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "task_frame": "palm origin + world-aligned fixed installation axes; native palm frame is retained in observations",
+  "initial_state": {
+    "time": 0.0,
+    "contacts": [],
+    "object_relative_pose": {
+      "position": [
+        0.025,
+        0.065,
+        -0.09
+      ],
+      "quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "phase": "IDLE",
+    "active_modes": [],
+    "grasp": "UNSTABLE",
+    "activated": null,
+    "mode_health": "INACTIVE",
+    "event": null,
+    "task_success": false,
+    "baseline_verified": false,
+    "hold_survived": false
+  },
+  "capabilities": {
+    "available": true,
+    "observation_profile": "MUJOCO_NO_TACTILE",
+    "supported_skills": [
+      "SHAPE_HAND",
+      "MAKE_CONTACT",
+      "ESTABLISH_GRASP",
+      "BREAK_CONTACT",
+      "APPLY_WRENCH"
+    ],
+    "supported_modes": [
+      "MAINTAIN_GRASP"
+    ],
+    "grasp_evaluator": "BASELINE_STATIC_V1",
+    "task_wrench_feasibility": false,
+    "aperture_range_m": [
+      0.02,
+      0.12
+    ],
+    "point_posture": true,
+    "force_limits": "original MJCF, unchanged",
+    "model": "Wuji Hand2 beta2 right",
+    "source": "$WUJI_ASSET_PROJECT\\src\\wuji_mjlab\\assets\\robots\\wuji_hand2\\mjcf\\right.xml"
+  }
+}

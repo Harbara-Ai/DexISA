@@ -1,0 +1,65 @@
+{
+  "outcome": "SUCCESS",
+  "claimed": "success",
+  "shield_failure": null,
+  "physical_success": true,
+  "recovery_attempts": 0,
+  "action_failures": 0,
+  "max_group_force": 0.10514787915926821,
+  "max_object_drift": 1.0921608149902198e-05,
+  "task_baseline_verified": false,
+  "hold_survived": false,
+  "tool_calls": 1,
+  "state_queries": 0,
+  "T_tool": 0.16983120003715158,
+  "T_physical_sim": 0.8640000000000007,
+  "T_sim_compute": 0.0934906005859375,
+  "first_contact_time": 0.8640000000000007,
+  "contact_to_action_end_s": 0.0,
+  "mujoco_warnings": 0,
+  "final_state": {
+    "time": 0.864,
+    "contacts": [
+      {
+        "group": "primary",
+        "normal_load": 0.0522,
+        "position": [
+          0.005968,
+          0.059117,
+          0.252077
+        ]
+      },
+      {
+        "group": "primary",
+        "normal_load": 0.0529,
+        "position": [
+          0.005968,
+          0.059117,
+          0.252246
+        ]
+      }
+    ],
+    "object_relative_pose": {
+      "position": [
+        0.025,
+        0.065,
+        -0.09001
+      ],
+      "quaternion": [
+        1.0,
+        0.0,
+        -0.0,
+        -0.0
+      ]
+    },
+    "phase": "SUCCESS",
+    "active_modes": [],
+    "grasp": "MARGINAL",
+    "activated": null,
+    "mode_health": "INACTIVE",
+    "event": null,
+    "task_success": true,
+    "baseline_verified": false,
+    "hold_survived": false
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "formal": false,
+  "purpose": "single_pair_comparison",
+  "hand": "Wuji",
+  "agent": "DIRECT_AGENT",
+  "task": "GUARDED_CONTACT",
+  "outcome": "SUCCESS",
+  "terminal_quality": "SUCCESS",
+  "requested_model": "gpt-5.6-luna",
+  "resolved_model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "runtime_version": "0.155.0-alpha.9.2",
+  "thread_id": "01a0be3e-94aa-76b0-a664-ea9fc7048bb9",
+  "session_id": "01a0be3e-94aa-76b0-a664-ea9fc7048bb9",
+  "turn_id": "01a0be3e-9508-7b71-a3cd-5f105b1fd880",
+  "usage_source": "native_turn_usage",
+  "token_usage": {
+    "available": true,
+    "input_tokens": 49173,
+    "cached_input_tokens": 33536,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 871,
+    "reasoning_output_tokens": 613,
+    "total_tokens": 50044
+  },
+  "T_startup": 1.5541787,
+  "T_active": 40.8632101,
+  "T_agent": 39.883432,
+  "T_tool": 0.32307790000000003,
+  "T_physical": 2.0999999999999694,
+  "T_total": 42.4173888,
+  "N_decision_cycles": 7,
+  "N_control_interventions": 5,
+  "N_tool_calls": 6,
+  "N_state_queries": 0,
+  "N_low_level_command_calls": 5,
+  "peak_group_load_N": 0.40531959385809935,
+  "max_object_drift_m": 0.0031222156774180897,
+  "failure_class": null,
+  "shield_triggered": false,
+  "benchmark_timeout_triggered": false,
+  "terminal_intervention_source": null,
+  "explicit_agent_stop": false,
+  "contact_to_action_end_s": 0.29999999999996807,
+  "initial_state_equivalent": true,
+  "state_and_scene_hashes": {
+    "initial_state_equivalent": true,
+    "direct_initial_state_sha256": "e7c3d742f91af5ebcf841c73d197f3da6ec26e3229697661cbfaa056aae33ed0",
+    "skill_initial_state_sha256": "e7c3d742f91af5ebcf841c73d197f3da6ec26e3229697661cbfaa056aae33ed0",
+    "scene_xml_sha256": "8bc958899bcbc3b3a3df758d635b266609613f323196cd7ddd7bfda9e3c9e633",
+    "skill_scene_xml_sha256": "8bc958899bcbc3b3a3df758d635b266609613f323196cd7ddd7bfda9e3c9e633",
+    "shared_sources_match": true
+  },
+  "audit_checks": {
+    "initial_state_equivalent": true,
+    "shared_sources_unchanged": true,
+    "skill_baseline_files_unchanged": true,
+    "native_usage_matches_thread_total": true,
+    "native_usage_matches_rollout_total": true,
+    "native_tool_count_matches": true,
+    "only_four_semantic_tools": true,
+    "physical_trace_time_matches": true,
+    "native_timing_valid": true,
+    "runtime_version_matches_skill": true
+  },
+  "errors": [],
+  "simulation_frames": 1050,
+  "sim_time_start": 0.18800000000000014,
+  "sim_time_end": 2.2879999999999696,
+  "t_episode_prepared": {
+    "unix_ns": 1789898167251944000,
+    "monotonic_ns": 1634922559272700
+  },
+  "t_first_agent_request_start": {
+    "unix_ns": 1789898168806122700,
+    "utc": "2026-09-20T09:56:08.806123+00:00"
+  },
+  "t_terminal_outcome": {
+    "unix_ns": 1789898209669332800,
+    "monotonic_ns": 1634964977131000
+  },
+  "baseline_result": "$WORKSPACE\\results_instrumentation_sanity\\instrumentation_sanity_result.json",
+  "native_transport_wrapper_calls": 6,
+  "physical": {
+    "outcome": "SUCCESS",
+    "claimed": "success",
+    "shield_failure": null,
+    "physical_success": true,
+    "recovery_attempts": 0,
+    "action_failures": 0,
+    "max_group_force": 0.40531959385809935,
+    "max_object_drift": 0.0031222156774180897,
+    "task_baseline_verified": false,
+    "hold_survived": false,
+    "tool_calls": 5,
+    "state_queries": 0,
+    "T_tool": 0.32178759993985295,
+    "T_physical_sim": 2.2879999999999696,
+    "T_sim_compute": 0.32089189998805523,
+    "first_contact_time": 1.9880000000000015,
+    "contact_to_action_end_s": 0.29999999999996807,
+    "mujoco_warnings": 0,
+    "final_state": {
+      "time": 2.288,
+      "q": [
+        0.006276,
+        0.007516,
+        0.003025,
+        0.000496,
+        1.142171,
+        0.301282,
+        1.749724,
+        1.400221,
+        0.000738,
+        -7.5e-05,
+        0.000126,
+        4e-05,
+        0.00054,
+        -0.001112,
+        8.5e-05,
+        3.5e-05,
+        0.000604,
+        -0.001618,
+        0.000105,
+        3.8e-05
+      ],
+      "contacts": [
+        {
+          "group": "primary",
+          "normal_load": 0.0424,
+          "position": [
+            0.012368,
+            0.053843,
+            0.271965
+          ]
+        },
+        {
+          "group": "primary",
+          "normal_load": 0.0438,
+          "position": [
+            0.012369,
+            0.053843,
+            0.272499
+          ]
+        }
+      ],
+      "object_relative_pose": {
+        "position": [
+          0.027555,
+          0.066795,
+          -0.090016
+        ],
+        "quaternion": [
+          0.99992,
+          3.6e-05,
+          0.000534,
+          0.012665
+        ]
+      },
+      "phase": "SUCCESS",
+      "active_modes": [],
+      "grasp": "MARGINAL",
+      "activated": null,
+      "mode_health": "INACTIVE",
+      "event": null,
+      "task_success": true,
+      "baseline_verified": false,
+      "hold_survived": false
+    }
+  }
+}

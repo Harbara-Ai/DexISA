@@ -1,0 +1,48 @@
+{
+  "task": "Establish contact between the primary contact group and the side of the supported cylinder. Stop after the first legal contact. Keep object drift within 0.015 m, group load below 4 N, and avoid unrelated collisions. The palm is fixed and the initial preshape is already prepared.",
+  "initial_observation": {
+    "time": 0.188,
+    "contacts": [],
+    "object_relative_pose": {
+      "position": [
+        0.025,
+        0.065,
+        -0.090011
+      ],
+      "quaternion": [
+        1.0,
+        -0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    "phase": "SUCCESS",
+    "active_modes": [],
+    "grasp": "UNSTABLE",
+    "activated": null,
+    "mode_health": "INACTIVE",
+    "event": null,
+    "task_success": false,
+    "baseline_verified": false,
+    "hold_survived": false,
+    "joint_positions": {
+      "4": 0.616994,
+      "5": 0.568503,
+      "6": 1.107063,
+      "7": 0.596582
+    },
+    "joint_velocities": {
+      "4": 0.048671,
+      "5": 0.202775,
+      "6": 0.635105,
+      "7": 0.145281
+    },
+    "primary_normal_load_N": 0,
+    "object_drift_m": 1.097461694075779e-05,
+    "max_object_drift_m": 0.0,
+    "collision": false,
+    "shield_failure": null,
+    "required_contact_established": false
+  },
+  "benchmark_terminal_timeout_s": 180
+}

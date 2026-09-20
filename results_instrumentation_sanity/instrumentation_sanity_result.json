@@ -1,0 +1,145 @@
+{
+  "formal": false,
+  "purpose": "instrumentation_sanity_check",
+  "instrumentation_gate": "PASS",
+  "valid_for_formal_benchmark": false,
+  "hand": "Wuji",
+  "agent": "SKILL_AGENT",
+  "task": "GUARDED_CONTACT / MAKE_CONTACT",
+  "outcome": "SUCCESS",
+  "thread_id": "01a0be2a-97ed-71c1-b6c2-6ae0781bfe1c",
+  "session_id": "01a0be2a-97ed-71c1-b6c2-6ae0781bfe1c",
+  "turn_id": "01a0be2a-984e-7ec2-ba40-5b1296a008a2",
+  "resolved_model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "runtime_version": "0.155.0-alpha.9.2",
+  "usage_source": "native_turn_usage",
+  "usage_event": "rawResponse/completed",
+  "token_usage": {
+    "available": true,
+    "input_tokens": 7216,
+    "cached_input_tokens": 2816,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 65,
+    "reasoning_output_tokens": 14,
+    "total_tokens": 7281
+  },
+  "episode_input_tokens": 7216,
+  "episode_output_tokens": 65,
+  "episode_total_tokens": 7281,
+  "T_startup": 1.4188754,
+  "T_active": 4.5775069,
+  "T_agent": 4.2790169,
+  "T_tool": 0.16985,
+  "T_physical": 0.6760000000000005,
+  "T_total": 5.9963823,
+  "N_decision_cycles": 2,
+  "N_control_interventions": 1,
+  "N_tool_calls": 1,
+  "N_state_queries": 0,
+  "t_episode_prepared": {
+    "unix_ns": 1789896857565252400,
+    "monotonic_ns": 1633612873812300
+  },
+  "t_first_agent_request_start": {
+    "unix_ns": 1789896858984127800,
+    "utc": "2026-09-20T09:34:18.984128+00:00"
+  },
+  "t_terminal_outcome": {
+    "unix_ns": 1789896863561634700,
+    "monotonic_ns": 1633618869994800
+  },
+  "t_physical_outcome": {
+    "unix_ns": 1789896862190774500,
+    "monotonic_ns": 1633617499935000
+  },
+  "terminal_outcome_definition": "native turn completed after physical result; includes terminal inference",
+  "T_agent_definition": "Sum of native non-warmup responses_websocket.stream_request spans; request dispatch through stream completion, including provider/network latency; no tool-time subtraction",
+  "sim_time_start": 0.18800000000000014,
+  "sim_time_end": 0.8640000000000007,
+  "simulation_frames": 338,
+  "native_transport_wrapper_calls": 1,
+  "tool_count_scope": "semantic robot calls; native exec is a transport wrapper, counted separately",
+  "gates": {
+    "real_native_luna_low": true,
+    "token_usage_available": true,
+    "positive_input_output": true,
+    "usage_matches_native_thread_total": true,
+    "usage_matches_session_rollout": true,
+    "valid_timing": true,
+    "distinct_counts": true,
+    "only_three_semantic_tools": true,
+    "physical_episode_executed": true,
+    "unchanged_implementation_and_assets": true,
+    "identical_nominal_prepared_state": true,
+    "no_infrastructure_error": true
+  },
+  "failed_fields": [],
+  "rollout_source_path": "$CODEX_HOME\\sessions\\2026\\09\\20\\rollout-2026-09-20T17-34-17-01a0be2a-97ed-71c1-b6c2-6ae0781bfe1c.jsonl",
+  "rollout_sha256": "820ca250d6c5e6bbe23083272b8786910385651009443f1d43c66174e911ed45",
+  "physical": {
+    "outcome": "SUCCESS",
+    "claimed": "success",
+    "shield_failure": null,
+    "physical_success": true,
+    "recovery_attempts": 0,
+    "action_failures": 0,
+    "max_group_force": 0.10514787915926821,
+    "max_object_drift": 1.0921608149902198e-05,
+    "task_baseline_verified": false,
+    "hold_survived": false,
+    "tool_calls": 1,
+    "state_queries": 0,
+    "T_tool": 0.16983120003715158,
+    "T_physical_sim": 0.8640000000000007,
+    "T_sim_compute": 0.0934906005859375,
+    "first_contact_time": 0.8640000000000007,
+    "contact_to_action_end_s": 0.0,
+    "mujoco_warnings": 0,
+    "final_state": {
+      "time": 0.864,
+      "contacts": [
+        {
+          "group": "primary",
+          "normal_load": 0.0522,
+          "position": [
+            0.005968,
+            0.059117,
+            0.252077
+          ]
+        },
+        {
+          "group": "primary",
+          "normal_load": 0.0529,
+          "position": [
+            0.005968,
+            0.059117,
+            0.252246
+          ]
+        }
+      ],
+      "object_relative_pose": {
+        "position": [
+          0.025,
+          0.065,
+          -0.09001
+        ],
+        "quaternion": [
+          1.0,
+          0.0,
+          -0.0,
+          -0.0
+        ]
+      },
+      "phase": "SUCCESS",
+      "active_modes": [],
+      "grasp": "MARGINAL",
+      "activated": null,
+      "mode_health": "INACTIVE",
+      "event": null,
+      "task_success": true,
+      "baseline_verified": false,
+      "hold_survived": false
+    }
+  }
+}

@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dex-hand-reference"
+version = "0.2.0"
+requires-python = ">=3.11"
+dependencies = ["mujoco>=3.3,<4", "numpy>=1.26", "jsonschema>=4"]
+
+[tool.setuptools.packages.find]
+include = ["dex_hand*"]

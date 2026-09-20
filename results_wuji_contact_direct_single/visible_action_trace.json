@@ -1,0 +1,77 @@
+{
+  "skill_baseline": [
+    {
+      "tool": "MAKE_CONTACT",
+      "arguments": {}
+    }
+  ],
+  "direct": [
+    {
+      "tool": "describe_hand",
+      "arguments": {},
+      "sim_time_start": 0.18800000000000014,
+      "sim_time_end": 0.18800000000000014
+    },
+    {
+      "tool": "set_joint_targets",
+      "arguments": {
+        "duration": 0.4,
+        "targets": {
+          "4": 0.7,
+          "6": 1.18,
+          "7": 0.67
+        }
+      },
+      "sim_time_start": 0.18800000000000014,
+      "sim_time_end": 0.5880000000000004
+    },
+    {
+      "tool": "set_joint_targets",
+      "arguments": {
+        "duration": 0.5,
+        "targets": {
+          "4": 0.9,
+          "6": 1.4,
+          "7": 0.85
+        }
+      },
+      "sim_time_start": 0.5880000000000004,
+      "sim_time_end": 1.0880000000000007
+    },
+    {
+      "tool": "set_joint_targets",
+      "arguments": {
+        "duration": 0.5,
+        "targets": {
+          "4": 1.15,
+          "6": 1.75,
+          "7": 1.1
+        }
+      },
+      "sim_time_start": 1.0880000000000007,
+      "sim_time_end": 1.5880000000000012
+    },
+    {
+      "tool": "set_joint_targets",
+      "arguments": {
+        "duration": 0.35,
+        "targets": {
+          "7": 1.4
+        }
+      },
+      "sim_time_start": 1.5880000000000012,
+      "sim_time_end": 1.9380000000000015
+    },
+    {
+      "tool": "set_joint_targets",
+      "arguments": {
+        "duration": 0.35,
+        "targets": {
+          "5": 0.3
+        }
+      },
+      "sim_time_start": 1.9380000000000015,
+      "sim_time_end": 2.2879999999999696
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "formal": false,
+  "evidence": "preliminary single-pair evidence",
+  "difference_definition": "Direct minus Skill",
+  "ratio_definition": "Direct divided by Skill",
+  "rows": [
+    [
+      "Success",
+      "SUCCESS",
+      "SUCCESS",
+      "—"
+    ],
+    [
+      "Total tokens",
+      7281,
+      50044,
+      "D-S=42763.0000000; D/S=6.8732"
+    ],
+    [
+      "Decision cycles",
+      2,
+      7,
+      "D-S=5.0000000; D/S=3.5000"
+    ],
+    [
+      "Control interventions",
+      1,
+      5,
+      "D-S=4.0000000; D/S=5.0000"
+    ],
+    [
+      "T_active s",
+      4.5775069,
+      40.8632101,
+      "D-S=36.2857032; D/S=8.9270"
+    ],
+    [
+      "T_agent s",
+      4.2790169,
+      39.883432,
+      "D-S=35.6044151; D/S=9.3207"
+    ],
+    [
+      "T_physical s",
+      0.6760000000000005,
+      2.0999999999999694,
+      "D-S=1.4240000; D/S=3.1065"
+    ],
+    [
+      "T_total s",
+      5.9963823,
+      42.4173888,
+      "D-S=36.4210065; D/S=7.0738"
+    ],
+    [
+      "Peak load N",
+      0.10514787915926821,
+      0.40531959385809935,
+      "D-S=0.3001717; D/S=3.8548"
+    ],
+    [
+      "Max drift m",
+      1.0921608149902198e-05,
+      0.0031222156774180897,
+      "D-S=0.0031113; D/S=285.8751"
+    ]
+  ],
+  "audit_checks": {
+    "initial_state_equivalent": true,
+    "shared_sources_unchanged": true,
+    "skill_baseline_files_unchanged": true,
+    "native_usage_matches_thread_total": true,
+    "native_usage_matches_rollout_total": true,
+    "native_tool_count_matches": true,
+    "only_four_semantic_tools": true,
+    "physical_trace_time_matches": true,
+    "native_timing_valid": true,
+    "runtime_version_matches_skill": true
+  }
+}

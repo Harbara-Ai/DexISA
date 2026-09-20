@@ -1,0 +1,818 @@
+{
+  "formal": false,
+  "original_workspace_modified": false,
+  "files": [
+    {
+      "path": "dex_hand/__init__.py",
+      "source_sha256": "8989f6eea7fa60e301dda736569c57b2a292d9ffaa70329604b842855ff43f85",
+      "published_sha256": "8989f6eea7fa60e301dda736569c57b2a292d9ffaa70329604b842855ff43f85",
+      "transformation": "verbatim",
+      "bytes": 74
+    },
+    {
+      "path": "dex_hand/adapters/__init__.py",
+      "source_sha256": "f55711289014edb490098517fb3b9ea264698435a0c6d42b9da0530cc3a616cf",
+      "published_sha256": "f55711289014edb490098517fb3b9ea264698435a0c6d42b9da0530cc3a616cf",
+      "transformation": "verbatim",
+      "bytes": 238
+    },
+    {
+      "path": "dex_hand/adapters/base.py",
+      "source_sha256": "81ece990045d072330dd56f4271b6f950fcc0360589e1c35d22181941a6ccb13",
+      "published_sha256": "81ece990045d072330dd56f4271b6f950fcc0360589e1c35d22181941a6ccb13",
+      "transformation": "verbatim",
+      "bytes": 1417
+    },
+    {
+      "path": "dex_hand/adapters/mujoco_base.py",
+      "source_sha256": "6b448086bdd8d23d2450f454463d59bfa6882cd0fafd62fb1f52bd9221816f72",
+      "published_sha256": "6b448086bdd8d23d2450f454463d59bfa6882cd0fafd62fb1f52bd9221816f72",
+      "transformation": "verbatim",
+      "bytes": 13224
+    },
+    {
+      "path": "dex_hand/adapters/sharpa_mujoco.py",
+      "source_sha256": "7b4d3d277315c2b6393324033f0d29b4971c224b394d1e9c8e24e648d458d275",
+      "published_sha256": "7b4d3d277315c2b6393324033f0d29b4971c224b394d1e9c8e24e648d458d275",
+      "transformation": "verbatim",
+      "bytes": 3793
+    },
+    {
+      "path": "dex_hand/adapters/transport_mujoco.py",
+      "source_sha256": "30c6c617fa5380bec110780cac6bddc6f399e357a797afbfaa4dc2102b2fead7",
+      "published_sha256": "30c6c617fa5380bec110780cac6bddc6f399e357a797afbfaa4dc2102b2fead7",
+      "transformation": "verbatim",
+      "bytes": 6177
+    },
+    {
+      "path": "dex_hand/adapters/wuji_mujoco.py",
+      "source_sha256": "5015a7b3ab6ca76ab0762925da40a29c96d969525a909d556ae422f0ce512c3c",
+      "published_sha256": "5015a7b3ab6ca76ab0762925da40a29c96d969525a909d556ae422f0ce512c3c",
+      "transformation": "verbatim",
+      "bytes": 636
+    },
+    {
+      "path": "dex_hand/core/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "verbatim",
+      "bytes": 0
+    },
+    {
+      "path": "dex_hand/core/capability.py",
+      "source_sha256": "c53743edd8ba56cf3005ebd1c4f7842274897099c36d7f130819a7de8405d9c2",
+      "published_sha256": "c53743edd8ba56cf3005ebd1c4f7842274897099c36d7f130819a7de8405d9c2",
+      "transformation": "verbatim",
+      "bytes": 1643
+    },
+    {
+      "path": "dex_hand/core/observation.py",
+      "source_sha256": "ed061c4cfb478c6831d6ef6fb1521d88500c1630622e4c6549f75cde755f4be6",
+      "published_sha256": "ed061c4cfb478c6831d6ef6fb1521d88500c1630622e4c6549f75cde755f4be6",
+      "transformation": "verbatim",
+      "bytes": 3517
+    },
+    {
+      "path": "dex_hand/core/outcome.py",
+      "source_sha256": "74cdc2ae6fe4d17acab2d857d0905cc02315f4c13dcc6ccc68afa100f4385fd8",
+      "published_sha256": "74cdc2ae6fe4d17acab2d857d0905cc02315f4c13dcc6ccc68afa100f4385fd8",
+      "transformation": "verbatim",
+      "bytes": 2315
+    },
+    {
+      "path": "dex_hand/core/schema.py",
+      "source_sha256": "5d7eeafc437735c13c334d3033c3f119eba66c1456b49848e0ce8e66736ae406",
+      "published_sha256": "5d7eeafc437735c13c334d3033c3f119eba66c1456b49848e0ce8e66736ae406",
+      "transformation": "verbatim",
+      "bytes": 769
+    },
+    {
+      "path": "dex_hand/core/types.py",
+      "source_sha256": "a083062bba2ddbd4e99acfc3ed0612621ef7d2709b3da910b18fde16ab67ac47",
+      "published_sha256": "a083062bba2ddbd4e99acfc3ed0612621ef7d2709b3da910b18fde16ab67ac47",
+      "transformation": "verbatim",
+      "bytes": 425
+    },
+    {
+      "path": "dex_hand/modes/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "verbatim",
+      "bytes": 0
+    },
+    {
+      "path": "dex_hand/modes/maintain_grasp.py",
+      "source_sha256": "d8c161fbc3aa198f719126bdeea0727300906c68b9d399c8ffb8645b5b307d11",
+      "published_sha256": "d8c161fbc3aa198f719126bdeea0727300906c68b9d399c8ffb8645b5b307d11",
+      "transformation": "verbatim",
+      "bytes": 6339
+    },
+    {
+      "path": "dex_hand/sim/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "verbatim",
+      "bytes": 0
+    },
+    {
+      "path": "dex_hand/sim/logging.py",
+      "source_sha256": "dbe8d5617f2f4ce7d52e3fe87a659c47aa65481f95ac9dc894fc1ba2459b7146",
+      "published_sha256": "dbe8d5617f2f4ce7d52e3fe87a659c47aa65481f95ac9dc894fc1ba2459b7146",
+      "transformation": "verbatim",
+      "bytes": 3210
+    },
+    {
+      "path": "dex_hand/sim/palm_transport.py",
+      "source_sha256": "aa1956a0453f054fb051f1c74b2f1dabc446d7bf67a97f1fe3ca1589ecdd3938",
+      "published_sha256": "aa1956a0453f054fb051f1c74b2f1dabc446d7bf67a97f1fe3ca1589ecdd3938",
+      "transformation": "verbatim",
+      "bytes": 2532
+    },
+    {
+      "path": "dex_hand/sim/perturbation.py",
+      "source_sha256": "4fb900cd884cecd1b74df67b23d9c3a8b0dca8803f7668f458892681e9caa300",
+      "published_sha256": "4fb900cd884cecd1b74df67b23d9c3a8b0dca8803f7668f458892681e9caa300",
+      "transformation": "verbatim",
+      "bytes": 478
+    },
+    {
+      "path": "dex_hand/sim/runner.py",
+      "source_sha256": "a5cfa490a072d0c6f4202c4ff53377bb51f477c207b43a1b24998e7b6b361d99",
+      "published_sha256": "a5cfa490a072d0c6f4202c4ff53377bb51f477c207b43a1b24998e7b6b361d99",
+      "transformation": "verbatim",
+      "bytes": 5782
+    },
+    {
+      "path": "dex_hand/sim/support_transfer.py",
+      "source_sha256": "00b194b4ea330f6826f6d22f746b90d2221a91104da06a96b4efe29a5bd2a337",
+      "published_sha256": "00b194b4ea330f6826f6d22f746b90d2221a91104da06a96b4efe29a5bd2a337",
+      "transformation": "verbatim",
+      "bytes": 8953
+    },
+    {
+      "path": "dex_hand/sim/worlds.py",
+      "source_sha256": "b56b386af3312bde5c512e72eba61838f3061db626b237bf566b1c2d9ad113d5",
+      "published_sha256": "b56b386af3312bde5c512e72eba61838f3061db626b237bf566b1c2d9ad113d5",
+      "transformation": "verbatim",
+      "bytes": 4316
+    },
+    {
+      "path": "dex_hand/skills/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "verbatim",
+      "bytes": 0
+    },
+    {
+      "path": "dex_hand/skills/apply_wrench.py",
+      "source_sha256": "8c277176651d26e57d584530810194947f39be2b5d973daf737da0169b28f948",
+      "published_sha256": "8c277176651d26e57d584530810194947f39be2b5d973daf737da0169b28f948",
+      "transformation": "verbatim",
+      "bytes": 2885
+    },
+    {
+      "path": "dex_hand/skills/base.py",
+      "source_sha256": "806a7acdf48aa0b455e7d0baa3d559eb0cb5f225701aee69b17f25ef0ae035a2",
+      "published_sha256": "806a7acdf48aa0b455e7d0baa3d559eb0cb5f225701aee69b17f25ef0ae035a2",
+      "transformation": "verbatim",
+      "bytes": 3701
+    },
+    {
+      "path": "dex_hand/skills/break_contact.py",
+      "source_sha256": "282e22376c9d199004dc9e9ef58e1813cb33b6602c04d594c7702aab7b3b1b3c",
+      "published_sha256": "282e22376c9d199004dc9e9ef58e1813cb33b6602c04d594c7702aab7b3b1b3c",
+      "transformation": "verbatim",
+      "bytes": 2093
+    },
+    {
+      "path": "dex_hand/skills/establish_grasp.py",
+      "source_sha256": "209c9dd6ef814314bc8eaafc755f882a91744688de2088abee2ca24eefe6fbe1",
+      "published_sha256": "209c9dd6ef814314bc8eaafc755f882a91744688de2088abee2ca24eefe6fbe1",
+      "transformation": "verbatim",
+      "bytes": 4170
+    },
+    {
+      "path": "dex_hand/skills/make_contact.py",
+      "source_sha256": "39d23ee0233cd1072d93735bb2497564bc6c03e1115f32f948de25f8c5751202",
+      "published_sha256": "39d23ee0233cd1072d93735bb2497564bc6c03e1115f32f948de25f8c5751202",
+      "transformation": "verbatim",
+      "bytes": 2310
+    },
+    {
+      "path": "dex_hand/skills/shape_hand.py",
+      "source_sha256": "3295640da105e64504a1c0a8af8c75524e49a6af3f438f45cf6a549363be79b0",
+      "published_sha256": "3295640da105e64504a1c0a8af8c75524e49a6af3f438f45cf6a549363be79b0",
+      "transformation": "verbatim",
+      "bytes": 993
+    },
+    {
+      "path": "pilot/__init__.py",
+      "source_sha256": "a9760a53e7af6bc2de07d7520056d2aafae5dedebd776c8c44735ad4d7c05d73",
+      "published_sha256": "a9760a53e7af6bc2de07d7520056d2aafae5dedebd776c8c44735ad4d7c05d73",
+      "transformation": "verbatim",
+      "bytes": 77
+    },
+    {
+      "path": "pilot/interfaces.py",
+      "source_sha256": "75a7f67938f1d4827458a347aa55a447bd26e054fb10e0f05abfd1600cfcb687",
+      "published_sha256": "75a7f67938f1d4827458a347aa55a447bd26e054fb10e0f05abfd1600cfcb687",
+      "transformation": "verbatim",
+      "bytes": 18001
+    },
+    {
+      "path": "pilot/protocol.py",
+      "source_sha256": "a691808fda8547dedb1c861cd36c1dce99305eba96029201d3b71aab075e3149",
+      "published_sha256": "a691808fda8547dedb1c861cd36c1dce99305eba96029201d3b71aab075e3149",
+      "transformation": "verbatim",
+      "bytes": 3195
+    },
+    {
+      "path": "pilot/run.py",
+      "source_sha256": "74c86a368c140e0feeae0599dc3dfe8674c0fe626150f214c3e4ae5366a2acbf",
+      "published_sha256": "74c86a368c140e0feeae0599dc3dfe8674c0fe626150f214c3e4ae5366a2acbf",
+      "transformation": "verbatim",
+      "bytes": 8179
+    },
+    {
+      "path": "tests/test_contracts.py",
+      "source_sha256": "4852ae8e89c3de3a848d7e1c437c8086dd70416e9dc3493d3cba1f947d23b6cc",
+      "published_sha256": "4852ae8e89c3de3a848d7e1c437c8086dd70416e9dc3493d3cba1f947d23b6cc",
+      "transformation": "verbatim",
+      "bytes": 5009
+    },
+    {
+      "path": "tests/test_instrumentation_sanity.py",
+      "source_sha256": "4b1bbcb0faeb90a911ffd5110ab3868a350c1aa0cd368770487df64d45740796",
+      "published_sha256": "4b1bbcb0faeb90a911ffd5110ab3868a350c1aa0cd368770487df64d45740796",
+      "transformation": "verbatim",
+      "bytes": 1403
+    },
+    {
+      "path": "tests/test_m0.py",
+      "source_sha256": "9a5be0c48997ec96e6932ba364e5b34f682fa81adeee22a466e63e9f9e56e0a1",
+      "published_sha256": "9a5be0c48997ec96e6932ba364e5b34f682fa81adeee22a466e63e9f9e56e0a1",
+      "transformation": "verbatim",
+      "bytes": 609
+    },
+    {
+      "path": "tests/test_m1.py",
+      "source_sha256": "56f51d91501560780409666821d013bb93231035bb627cdfd34483e64d83985c",
+      "published_sha256": "56f51d91501560780409666821d013bb93231035bb627cdfd34483e64d83985c",
+      "transformation": "verbatim",
+      "bytes": 977
+    },
+    {
+      "path": "tests/test_m2.py",
+      "source_sha256": "20ebc396ffb3f4f77b836905beae2d844e56d389b01cb6d3cd53af161b754e7b",
+      "published_sha256": "20ebc396ffb3f4f77b836905beae2d844e56d389b01cb6d3cd53af161b754e7b",
+      "transformation": "verbatim",
+      "bytes": 359
+    },
+    {
+      "path": "tests/test_m3.py",
+      "source_sha256": "b038835694e7ca6704d7243896580255b87c7afa49df484741b49c0643389b75",
+      "published_sha256": "b038835694e7ca6704d7243896580255b87c7afa49df484741b49c0643389b75",
+      "transformation": "verbatim",
+      "bytes": 608
+    },
+    {
+      "path": "tests/test_m4.py",
+      "source_sha256": "fa673c1374bdc1df386cc22d1c559d84806ad1dbd0d8d741b656e8d433ebc64a",
+      "published_sha256": "fa673c1374bdc1df386cc22d1c559d84806ad1dbd0d8d741b656e8d433ebc64a",
+      "transformation": "verbatim",
+      "bytes": 818
+    },
+    {
+      "path": "tests/test_m5.py",
+      "source_sha256": "e3c517ccd8bfa239bb6429fbdfe13be892e31a62202c0e7aac7cef580a0b7d21",
+      "published_sha256": "e3c517ccd8bfa239bb6429fbdfe13be892e31a62202c0e7aac7cef580a0b7d21",
+      "transformation": "verbatim",
+      "bytes": 809
+    },
+    {
+      "path": "tests/test_m6.py",
+      "source_sha256": "5de116d595ed4ad9485779d5a77eaf91e8c3ecc00149ecac6cbc1f257e500164",
+      "published_sha256": "5de116d595ed4ad9485779d5a77eaf91e8c3ecc00149ecac6cbc1f257e500164",
+      "transformation": "verbatim",
+      "bytes": 1017
+    },
+    {
+      "path": "tests/test_m7.py",
+      "source_sha256": "5bb6c853b97ce17257fa4eb7763030f9eb784b6e389be4c314516519e30b4161",
+      "published_sha256": "5bb6c853b97ce17257fa4eb7763030f9eb784b6e389be4c314516519e30b4161",
+      "transformation": "verbatim",
+      "bytes": 1390
+    },
+    {
+      "path": "tests/test_m8.py",
+      "source_sha256": "54e2e21e52cac238101be3624bf44c084c56c373bad127dc3131a7c25b104d36",
+      "published_sha256": "54e2e21e52cac238101be3624bf44c084c56c373bad127dc3131a7c25b104d36",
+      "transformation": "verbatim",
+      "bytes": 4007
+    },
+    {
+      "path": "tests/test_pilot.py",
+      "source_sha256": "88979273e238da04466286947f8f4c51c30e0d312e4a3f514d31120a1827ab15",
+      "published_sha256": "88979273e238da04466286947f8f4c51c30e0d312e4a3f514d31120a1827ab15",
+      "transformation": "verbatim",
+      "bytes": 3844
+    },
+    {
+      "path": "tests/test_support_transfer.py",
+      "source_sha256": "866bd822b6e6042c91e35c79db65d9f4eeaddd16d474bf8136a9d414786a66d3",
+      "published_sha256": "866bd822b6e6042c91e35c79db65d9f4eeaddd16d474bf8136a9d414786a66d3",
+      "transformation": "verbatim",
+      "bytes": 1913
+    },
+    {
+      "path": "tests/test_transport.py",
+      "source_sha256": "6755fbc8d3270e361cfcfe8d991787378284a38f7261eb786abeac6faea1a632",
+      "published_sha256": "6755fbc8d3270e361cfcfe8d991787378284a38f7261eb786abeac6faea1a632",
+      "transformation": "verbatim",
+      "bytes": 3876
+    },
+    {
+      "path": "scripts/instrumentation_sanity.py",
+      "source_sha256": "255a0db91ad643194aba7e4b061879abd1885f039328bcbd410e8d9e031c998a",
+      "published_sha256": "255a0db91ad643194aba7e4b061879abd1885f039328bcbd410e8d9e031c998a",
+      "transformation": "verbatim",
+      "bytes": 10743
+    },
+    {
+      "path": "scripts/summarize_instrumentation_sanity.py",
+      "source_sha256": "5e3ab2542beb154c5e029afe19a29831a6e19dd322efdf714aaf0241c673ff99",
+      "published_sha256": "5e3ab2542beb154c5e029afe19a29831a6e19dd322efdf714aaf0241c673ff99",
+      "transformation": "verbatim",
+      "bytes": 14398
+    },
+    {
+      "path": "scripts/run_wuji_contact_direct_single.py",
+      "source_sha256": "0815732bf33dfdcd10697d195a1d1c6da9a758b8d1bd4a5b553ca954515cb8ca",
+      "published_sha256": "0815732bf33dfdcd10697d195a1d1c6da9a758b8d1bd4a5b553ca954515cb8ca",
+      "transformation": "verbatim",
+      "bytes": 11822
+    },
+    {
+      "path": "scripts/summarize_wuji_contact_direct_single.py",
+      "source_sha256": "c9fa5e7fae3eb61a6c9c8d55dfbe699a63b9e75b940b8306109407353969ad3d",
+      "published_sha256": "c9fa5e7fae3eb61a6c9c8d55dfbe699a63b9e75b940b8306109407353969ad3d",
+      "transformation": "verbatim",
+      "bytes": 19089
+    },
+    {
+      "path": "scripts/contact_native_bridge.py",
+      "source_sha256": "90a5e8fa47d8ef6cad06b19bec410a3dc3f7ccbe0de98088a1ed0269c0a75929",
+      "published_sha256": "90a5e8fa47d8ef6cad06b19bec410a3dc3f7ccbe0de98088a1ed0269c0a75929",
+      "transformation": "verbatim",
+      "bytes": 10946
+    },
+    {
+      "path": "scripts/fetch_sharpa.py",
+      "source_sha256": "c295e7be48ce869024444f5842a99c3c6d0dd49abab4778e912607fc1acc53a9",
+      "published_sha256": "c295e7be48ce869024444f5842a99c3c6d0dd49abab4778e912607fc1acc53a9",
+      "transformation": "verbatim",
+      "bytes": 1502
+    },
+    {
+      "path": "pyproject.toml",
+      "source_sha256": "ae462ede7089836dacd4368d0520b107fdb83618ee4cfb6edded64b59fedada5",
+      "published_sha256": "ae462ede7089836dacd4368d0520b107fdb83618ee4cfb6edded64b59fedada5",
+      "transformation": "verbatim",
+      "bytes": 292
+    },
+    {
+      "path": ".gitignore",
+      "source_sha256": "7d0d4c6996fb87847c34aaec44ae31d8782c5756a31213a8795bfb1f49f5a540",
+      "published_sha256": "7d0d4c6996fb87847c34aaec44ae31d8782c5756a31213a8795bfb1f49f5a540",
+      "transformation": "verbatim",
+      "bytes": 45
+    },
+    {
+      "path": "agent-interface-benchmark-spec-v0.2.md",
+      "source_sha256": "33efdbe7853774416880b98a6d6d8f80574ff14dd66a0ccc0b994c07f091db36",
+      "published_sha256": "33efdbe7853774416880b98a6d6d8f80574ff14dd66a0ccc0b994c07f091db36",
+      "transformation": "verbatim",
+      "bytes": 11320
+    },
+    {
+      "path": "run_test.py",
+      "source_sha256": "43e894d1bfbcc1c154ee2543f4b3793ce583cb57e51619a33542a65f0bb2992d",
+      "published_sha256": "43e894d1bfbcc1c154ee2543f4b3793ce583cb57e51619a33542a65f0bb2992d",
+      "transformation": "verbatim",
+      "bytes": 2413
+    },
+    {
+      "path": "dexterous-hand-skill-mcp-spec-v0.2.md",
+      "source_sha256": "ef6ca237e76b2fab0722a6b6d9a0c75455efac053c24e6491a207ff9084e5058",
+      "published_sha256": "4a7d3cbdd1d9b44ce26fe34ef391888f990a3ae61a9637c3bee0f4c73c2d3993",
+      "transformation": "existing remote; same text, different line endings",
+      "bytes": 85926
+    },
+    {
+      "path": "results_instrumentation_sanity/decision_trace.jsonl",
+      "source_sha256": "828a2ef9dc8c17118eb39ba9b9989955721985d76dd5fb5ffd379e0144439581",
+      "published_sha256": "77ffe40495582478c763b10fd3904c40a4b30395f53e4df94a0d76959c221064",
+      "transformation": "path normalization only",
+      "bytes": 1160
+    },
+    {
+      "path": "results_instrumentation_sanity/episode_native_events.jsonl",
+      "source_sha256": "af8322b74a33b4143f4bb65b5b93df0e97bb29bfc349c9386beea579b36f1e39",
+      "published_sha256": "cba5f689a5243e7d49b712b0220b0d24eac6fc05954fb542a3855847a78143c4",
+      "transformation": "native event subset; account/context/reasoning payloads omitted; usage unchanged; paths normalized",
+      "bytes": 5438
+    },
+    {
+      "path": "results_instrumentation_sanity/episode_native_requests.jsonl",
+      "source_sha256": "7043950218111f745c191ad6f7b8f7f9334f044af82f7265f867bb34802820e7",
+      "published_sha256": "3ea35fb9d10e017cd0d79659cedbf35c0c510e8160b3af8500c96b36ad5d625f",
+      "transformation": "path normalization only",
+      "bytes": 3283
+    },
+    {
+      "path": "results_instrumentation_sanity/episode_otel.jsonl",
+      "source_sha256": "404087aa5c0f387c8b1ae677b0bcd89f7584e468d2a4bf4089ffc35dda26122b",
+      "published_sha256": "714c8814353751d49fc2b6196cb190d4bd68c573c3142c9a94346cb91b806333",
+      "transformation": "native inference/tool-registry span subset; unrelated logs/identity attributes omitted; timestamps unchanged",
+      "bytes": 9596
+    },
+    {
+      "path": "results_instrumentation_sanity/episode_prepared.json",
+      "source_sha256": "17c61a833a4f25c365b783c8cf8008152b430961622c6f3b6ce0967668d81de6",
+      "published_sha256": "8022b54278ae2e884c5615955c02c2f0028abb8572ae45f46a175444d5681ed6",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 202
+    },
+    {
+      "path": "results_instrumentation_sanity/execution.json",
+      "source_sha256": "3393b227ae206632e85926795b695b236c51dcdefb07a7e15a9fc6c6736c7f10",
+      "published_sha256": "ea8d2e79581cb5b167f5cdd7803fbd1ba1de9c2f87dd26d94ce0c9529130d637",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 2399
+    },
+    {
+      "path": "results_instrumentation_sanity/INSTRUMENTATION_SANITY_REPORT.md",
+      "source_sha256": "bfd456fda0d4db0f8fb08c89ac364c3e4d576596beffe3f74f2abf40eae31c51",
+      "published_sha256": "3ee2c391087b981c67ed7be109fbcd9c7ad14b69b3f74ace4bb3042dc3c3af95",
+      "transformation": "private path normalization only",
+      "bytes": 4952
+    },
+    {
+      "path": "results_instrumentation_sanity/instrumentation_sanity_result.json",
+      "source_sha256": "8e93b24a0e6136ca896a646600503e02e7dce106e6dd193eadb9cb9a05954534",
+      "published_sha256": "dba8133827c5fd1a728f99398a0be208eee46490f0a58bfed02cf4f2927af943",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 4426
+    },
+    {
+      "path": "results_instrumentation_sanity/native_rollout_evidence.json",
+      "source_sha256": "4d65bf9d21e7588b3db71310e01c5b6709fa5c046652d9ba2600828d61fd73d8",
+      "published_sha256": "d9481e6a60aecaaec5fb302ab57c1d331526d6d95da9bb0371321fb3bf479dd5",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 499
+    },
+    {
+      "path": "results_instrumentation_sanity/native_thread.json",
+      "source_sha256": "4e5b9c824b566ae190868253ec18ebda0968a879186d54ed56c57ab5ed8330f1",
+      "published_sha256": "e62a95ff2aa238ad6e0d362ca73d4ce064c8b178d9faa6951ceade739377baf4",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1529
+    },
+    {
+      "path": "results_instrumentation_sanity/physical/episode_simulation.jsonl",
+      "source_sha256": "c0dbd94de2dac9684e98a72932ffeccc6cfc68f74083b1c242c924555b7c7a66",
+      "published_sha256": "666aeb6856cfcf3f31768b83f20f7a033a582aef843d58039e4461490e47ddd0",
+      "transformation": "path normalization only",
+      "bytes": 2228451
+    },
+    {
+      "path": "results_instrumentation_sanity/physical/initial_state.json",
+      "source_sha256": "ebf54360bc259143d8fe4659a8b0d2c30ea5587aa92787652e42f25878988d78",
+      "published_sha256": "6fd4e5136e102c751e92bf9ef722ad139e9767e47d9e1ff4e2c990375b2682b4",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1986
+    },
+    {
+      "path": "results_instrumentation_sanity/physical/scene.xml",
+      "source_sha256": "8200b3c57e6791132c0af36d3b9771c473ced43e78e46f37811d45677c6b5518",
+      "published_sha256": "6a3dd6d177ed48c142b898f819211774d5ee844d33f6cbfc6b0941ae6e01b7cb",
+      "transformation": "private path normalization only",
+      "bytes": 26853
+    },
+    {
+      "path": "results_instrumentation_sanity/physical/simulation.jsonl",
+      "source_sha256": "a6a5de11bd89c12cdd6f85a22f8b37301489546cdbff461e9a1051c1c75133ac",
+      "published_sha256": "006d49bf43c5697dc04a540a7317d31c708509b96d4f9fea58843cc8711b6c84",
+      "transformation": "path normalization only",
+      "bytes": 611526
+    },
+    {
+      "path": "results_instrumentation_sanity/physical/simulation_result.json",
+      "source_sha256": "94c59e25cded0bc6f06f40b1ee0791ff4ee3c261b27830befc62ef77ee4d8e12",
+      "published_sha256": "32c7e6d1e58a2250a6377f97c4a358964bdea2c50f7e5ea9203472585671f101",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1386
+    },
+    {
+      "path": "results_instrumentation_sanity/physical/tool_calls.json",
+      "source_sha256": "11adf97de432c0a0b7c5192c3d871ce7eee69cfc6a6fa5c5d348c940414cc49c",
+      "published_sha256": "7a432ba9cf2d16774a4aa7fc3560b1ddb5094db5e544cd7c7ef47b64d1b51423",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 102
+    },
+    {
+      "path": "results_instrumentation_sanity/prepared_initial_state.json",
+      "source_sha256": "9f35b8e42477eea7b414abbf118d7b8656b418b8b87ebbdc392edf46690ce25b",
+      "published_sha256": "55911a7aab1fd2ff1a2d10b519d7f951238fbd87ab918bf5c06c335e2d24c5cc",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1916
+    },
+    {
+      "path": "results_instrumentation_sanity/prompt.txt",
+      "source_sha256": "80454bd3451ea5edd1631a945c64623dd02283937feb811bcbe23086600c5adc",
+      "published_sha256": "e8dd5319af960fa62a8a5268aab243c6b4fd1bfe9f41ebe5bd18fb7eaec2ab88",
+      "transformation": "private path normalization only",
+      "bytes": 208
+    },
+    {
+      "path": "results_instrumentation_sanity/protocol_schema/v2/RawResponseCompletedNotification.json",
+      "source_sha256": "aba140e87952c900f96e0308a8849d3e313d985de1f1aa2b77f193884a76357c",
+      "published_sha256": "a57e090fa4450e411df956cdc49ffc1e232d9449d0501e1651d7936019ca75ed",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1821
+    },
+    {
+      "path": "results_instrumentation_sanity/protocol_schema/v2/ThreadStartParams.json",
+      "source_sha256": "80a40a7fac15b4bf70efb7f893fb353acc0a0d30c68f54aee4f01923deca85de",
+      "published_sha256": "80a40a7fac15b4bf70efb7f893fb353acc0a0d30c68f54aee4f01923deca85de",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 13453
+    },
+    {
+      "path": "results_instrumentation_sanity/protocol_schema/v2/ThreadTokenUsageUpdatedNotification.json",
+      "source_sha256": "aba4f6c7e4a19b2b842c08ee793b57000c07dafd57b922ad0d8e7c76609108c2",
+      "published_sha256": "aba4f6c7e4a19b2b842c08ee793b57000c07dafd57b922ad0d8e7c76609108c2",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1727
+    },
+    {
+      "path": "results_instrumentation_sanity/shared_after.json",
+      "source_sha256": "9be163cb7adb48be32708628e71dabec663408946c5a51a249038e8aea12553c",
+      "published_sha256": "5d5150de91fbcb984d4d712f8d341cf6dbd91e81647d2bb8ccf63ccecf6ece8b",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 6319
+    },
+    {
+      "path": "results_instrumentation_sanity/shared_before.json",
+      "source_sha256": "9be163cb7adb48be32708628e71dabec663408946c5a51a249038e8aea12553c",
+      "published_sha256": "5d5150de91fbcb984d4d712f8d341cf6dbd91e81647d2bb8ccf63ccecf6ece8b",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 6319
+    },
+    {
+      "path": "results_instrumentation_sanity/token_usage_per_turn.json",
+      "source_sha256": "076f0408d4fcd849463830dd8e3c136c2e55d7497e0c5bda86df54512187166a",
+      "published_sha256": "207ca7861b4996c5b9cc346de734692453cd6a16069461f9e15dce25da099555",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 771
+    },
+    {
+      "path": "results_instrumentation_sanity/tool_schema.json",
+      "source_sha256": "4e463a6e80f91999444903eb72fb8a8d4f7d4431564429862c9136d64afe898d",
+      "published_sha256": "c2d3cc86863e5a937d4903bfb55d093674e1d10c9b9a2d7848930cbca0d60cbe",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 885
+    },
+    {
+      "path": "results_instrumentation_sanity/tool_trace.jsonl",
+      "source_sha256": "b6ed47e8fd5a24b9cd1b7c933e13ff065a120cdf4f2f8f72a48d9c2762e386e0",
+      "published_sha256": "d98ab801ac0a7958c405198b73a57d74fbaa84a8ba45606feeff25e949895c86",
+      "transformation": "path normalization only",
+      "bytes": 1227
+    },
+    {
+      "path": "results_wuji_contact_direct_single/baseline_files_after.json",
+      "source_sha256": "c2ed32081bc05584678bbb844c87ecfe17a4b3569dfb3ddbaf17e6fd2a0fb04d",
+      "published_sha256": "ac1ae5c63d04a02ea6e5f6396f9b4429c9be7fb29cfedb76811283dd00325b0e",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 57487
+    },
+    {
+      "path": "results_wuji_contact_direct_single/baseline_files_before.json",
+      "source_sha256": "c2ed32081bc05584678bbb844c87ecfe17a4b3569dfb3ddbaf17e6fd2a0fb04d",
+      "published_sha256": "ac1ae5c63d04a02ea6e5f6396f9b4429c9be7fb29cfedb76811283dd00325b0e",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 57487
+    },
+    {
+      "path": "results_wuji_contact_direct_single/decision_trace.jsonl",
+      "source_sha256": "d558555ab381d5d36b1402744eb8604f057d46102648de27cc65dbf0cadebcfe",
+      "published_sha256": "52feebe4348eef310a001c762204736f0b3c21b74a37fff45ef90ce8423439ec",
+      "transformation": "path normalization only",
+      "bytes": 3975
+    },
+    {
+      "path": "results_wuji_contact_direct_single/episode_native_events.jsonl",
+      "source_sha256": "17bea1a81824da0165803d3e69d4bb1d011f3b8e992c8c6d49ba174d12aac46e",
+      "published_sha256": "a3614a7a7f30fb1c81d48c794f63359ac6219b387de3c3ffeef0c3ca36b8a5fc",
+      "transformation": "native event subset; account/context/reasoning payloads omitted; usage unchanged; paths normalized",
+      "bytes": 28870
+    },
+    {
+      "path": "results_wuji_contact_direct_single/episode_native_requests.jsonl",
+      "source_sha256": "86c845c133f849b3926bcdd4e554b49b8bc5aca2a15a01ff90019bcd26103ecc",
+      "published_sha256": "e90d55342794a317d3ba5996e4e7b823db3f6e6a31b9dcfc0bdcf32ab806f618",
+      "transformation": "path normalization only",
+      "bytes": 14087
+    },
+    {
+      "path": "results_wuji_contact_direct_single/episode_otel.jsonl",
+      "source_sha256": "0e210020037a1616b12701a03aa5ec9c601356fa3c58219ae8efde9fe60b3966",
+      "published_sha256": "c51dd2217068e7c70e09198c246caf23c00fe7ce59e7496c6dff3d0965ca0890",
+      "transformation": "native inference/tool-registry span subset; unrelated logs/identity attributes omitted; timestamps unchanged",
+      "bytes": 27871
+    },
+    {
+      "path": "results_wuji_contact_direct_single/episode_prepared.json",
+      "source_sha256": "edc2b0475e76662ec3b4f8ee0a97904c6a1018ab458ff2f327b5e15f0243c3fb",
+      "published_sha256": "8fd96e5e2f33b4b63f31099aea7e5ac47e8970579060a01414c42b62dc7a45ca",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 138
+    },
+    {
+      "path": "results_wuji_contact_direct_single/execution.json",
+      "source_sha256": "24a06310200edbe66e656334e159861544a5ae44c7e03af7440e1980d62151d0",
+      "published_sha256": "9be8a12036fcd13e9f6dfd66746186f344ef94c53f0f1e5636b32c2b4388c265",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 4201
+    },
+    {
+      "path": "results_wuji_contact_direct_single/initial_equivalence.json",
+      "source_sha256": "7b19947bd9a2c71b9618d7b1faabbe1a79830ad6cdc731a4f32c4ea0c3c43c67",
+      "published_sha256": "b6b363a8e57f1e9eaaa806978726b4e6e52eddfbcf9a32aa297b99a43a4c1169",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 457
+    },
+    {
+      "path": "results_wuji_contact_direct_single/initial_observation.json",
+      "source_sha256": "7b3a5e9cad72850024ca5cddd9ee9c55d0b345b5ae7294475ac322cbc87e7e76",
+      "published_sha256": "dd51539b143c5de69a39b162fc09feea4e711414b4eb327141adccfc209ca2ce",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 821
+    },
+    {
+      "path": "results_wuji_contact_direct_single/native_rollout_evidence.json",
+      "source_sha256": "4e7fa01748b3bd0ecd81ab997d1705ae982c7179b07e9dd9a9af4aa1fee6eabf",
+      "published_sha256": "cc4bebeb7baa1a5ad8543dba3a5a8cda14f704f4bb190b741f5925eef2229e08",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 2819
+    },
+    {
+      "path": "results_wuji_contact_direct_single/native_thread.json",
+      "source_sha256": "343efa6758d2e572a73f014e0c8f39af477474d0d33cdba3e9fdff8fec754359",
+      "published_sha256": "80a4322639180aea34e707f42fb61751b59167d050f0fd156f16e2e7116a08e6",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1537
+    },
+    {
+      "path": "results_wuji_contact_direct_single/pair_comparison.json",
+      "source_sha256": "b4fb6bcc40821729be190b8abeae7abb39ea01c4a9942da9120b939436a0f203",
+      "published_sha256": "c863318c14b7d45f7dc9e3c244cad8e079f82da12075bf4eb07d186153748add",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1656
+    },
+    {
+      "path": "results_wuji_contact_direct_single/physical/episode_simulation.jsonl",
+      "source_sha256": "d5999abcbf8c7fd974d19690e042d530df740320af69a6f71138e0129b30e356",
+      "published_sha256": "4133ada003b8a97a96f6e116e32f89588477d2f508e4ff136599cadd74f3dc2a",
+      "transformation": "path normalization only",
+      "bytes": 7220807
+    },
+    {
+      "path": "results_wuji_contact_direct_single/physical/initial_state.json",
+      "source_sha256": "6c413932177ac4535a3d09f864dd51b2b6f223e541fe37ab7e13a80cd976ef97",
+      "published_sha256": "33fede34a503f959eae38aa51fe0526fcae78b76d4a99d67c7482106869f00ca",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 9141
+    },
+    {
+      "path": "results_wuji_contact_direct_single/physical/scene.xml",
+      "source_sha256": "8200b3c57e6791132c0af36d3b9771c473ced43e78e46f37811d45677c6b5518",
+      "published_sha256": "6a3dd6d177ed48c142b898f819211774d5ee844d33f6cbfc6b0941ae6e01b7cb",
+      "transformation": "private path normalization only",
+      "bytes": 26853
+    },
+    {
+      "path": "results_wuji_contact_direct_single/physical/simulation.jsonl",
+      "source_sha256": "a6a5de11bd89c12cdd6f85a22f8b37301489546cdbff461e9a1051c1c75133ac",
+      "published_sha256": "006d49bf43c5697dc04a540a7317d31c708509b96d4f9fea58843cc8711b6c84",
+      "transformation": "path normalization only",
+      "bytes": 611526
+    },
+    {
+      "path": "results_wuji_contact_direct_single/physical/simulation_result.json",
+      "source_sha256": "d79b24490b702593d4a9d19daa8694a14069eed342d275e3663dbcce6ce5f9b1",
+      "published_sha256": "f8825ee246bce98abfbc5f1d829bf60a518b9806f1afbaac3396e8f4a789c552",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1757
+    },
+    {
+      "path": "results_wuji_contact_direct_single/physical/tool_calls.json",
+      "source_sha256": "e876def4545c149e97448c61b8bb12fc929b81d2c1d54daad4d7ea6023218865",
+      "published_sha256": "895c479ef6a8cfb5c1fe1ea99d70ea99f9cf1bb3470a2217f2cea6c3fc8adaf7",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1002
+    },
+    {
+      "path": "results_wuji_contact_direct_single/prepared_initial_state.json",
+      "source_sha256": "9f35b8e42477eea7b414abbf118d7b8656b418b8b87ebbdc392edf46690ce25b",
+      "published_sha256": "55911a7aab1fd2ff1a2d10b519d7f951238fbd87ab918bf5c06c335e2d24c5cc",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1916
+    },
+    {
+      "path": "results_wuji_contact_direct_single/prompt.txt",
+      "source_sha256": "f1d8447df3b5fbb7ec7ab7f9c20212b362d0aafdd3ff4b2d6ff8ee238bafe0c2",
+      "published_sha256": "048b2ae3711ec42c21a4ce3a5b728875ac4611c8dd09da2fdc11496033b82d8e",
+      "transformation": "private path normalization only",
+      "bytes": 358
+    },
+    {
+      "path": "results_wuji_contact_direct_single/run_config.json",
+      "source_sha256": "6fbf3ec43de92e1718a079a1251c1aef376ab9211c5b66a88282e41f1685c035",
+      "published_sha256": "9a0b9eef8812a6b30f1008de6898b84eec7d560b954f609789aa7b869e4c5778",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 662
+    },
+    {
+      "path": "results_wuji_contact_direct_single/shared_after.json",
+      "source_sha256": "9be163cb7adb48be32708628e71dabec663408946c5a51a249038e8aea12553c",
+      "published_sha256": "5d5150de91fbcb984d4d712f8d341cf6dbd91e81647d2bb8ccf63ccecf6ece8b",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 6319
+    },
+    {
+      "path": "results_wuji_contact_direct_single/shared_before.json",
+      "source_sha256": "9be163cb7adb48be32708628e71dabec663408946c5a51a249038e8aea12553c",
+      "published_sha256": "5d5150de91fbcb984d4d712f8d341cf6dbd91e81647d2bb8ccf63ccecf6ece8b",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 6319
+    },
+    {
+      "path": "results_wuji_contact_direct_single/task_input.json",
+      "source_sha256": "28a940e4da4c70cad176b1e3a13b64b918e493376f1fb8eaac8d48c2bbc53781",
+      "published_sha256": "a2cd6199a0d63b6ca6c208b52432a66445b23d24f5904f81cc48b44eef754b10",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1268
+    },
+    {
+      "path": "results_wuji_contact_direct_single/token_usage_per_turn.json",
+      "source_sha256": "1c392b07f3cd038db744b1872922ad77c81b09f217333406032df90c206da3dc",
+      "published_sha256": "65d20ceac6bdd3b7d8e5d395fc6eebc08276a146fbf2e4ec41ed905036612576",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 2710
+    },
+    {
+      "path": "results_wuji_contact_direct_single/tool_schema.json",
+      "source_sha256": "6e5decdc040ca08c1f99393bd47875fcf4f4a20c702cec4cea1aafe0f856e9bf",
+      "published_sha256": "152b07cd8b21e47188cfeb5acb9633e1db49aaaaae27d9c544105da6672d867b",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 2117
+    },
+    {
+      "path": "results_wuji_contact_direct_single/tool_trace.jsonl",
+      "source_sha256": "e8d11008389310360deff6cb3169bc6fc040c964dc949dcbf54ad62727686873",
+      "published_sha256": "d9d481a185649564cc2b33ae880bbbf2479165a6908c1b1d7a442c7dbcd4aa3a",
+      "transformation": "path normalization only",
+      "bytes": 10819
+    },
+    {
+      "path": "results_wuji_contact_direct_single/visible_action_trace.json",
+      "source_sha256": "fa247fb0df713d4bf83fffc55300e9ad5b93e3a4d892d3046019f579df3a327f",
+      "published_sha256": "889afb6017a376ae098dae8a72fed34ff33e7c4727e608763d8f5e8c8678764d",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 1583
+    },
+    {
+      "path": "results_wuji_contact_direct_single/wuji_contact_direct_single.json",
+      "source_sha256": "147481a23415b50447659e76ab8655998c1168f913166974a5168a9f843d3969",
+      "published_sha256": "9f1814885121b2ac736b49942fb67ad30f2c9188917c31d6ad4246141f9c9fa9",
+      "transformation": "JSON formatting; private paths/fields normalized; measurements unchanged",
+      "bytes": 4894
+    },
+    {
+      "path": "results_wuji_contact_direct_single/WUJI_CONTACT_DIRECT_SINGLE.md",
+      "source_sha256": "5e835aa03753c0e704fbe133d6a3c82b6825b862127e58a45086695d298f69ba",
+      "published_sha256": "f838d4a9bb21902ca9892a17f4a6606462a4c95d258e92c774032876fd241908",
+      "transformation": "private path normalization only",
+      "bytes": 8090
+    },
+    {
+      "path": "results_contact_native/B_wuji_nominal_SKILL_AGENT/prepared_initial_state.json",
+      "source_sha256": "9f35b8e42477eea7b414abbf118d7b8656b418b8b87ebbdc392edf46690ce25b",
+      "published_sha256": "9f35b8e42477eea7b414abbf118d7b8656b418b8b87ebbdc392edf46690ce25b",
+      "transformation": "verbatim",
+      "bytes": 2005
+    }
+  ]
+}

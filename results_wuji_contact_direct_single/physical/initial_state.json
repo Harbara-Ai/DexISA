@@ -1,0 +1,623 @@
+{
+  "task": "Establish legal primary-group contact with the supported cylinder and stop. Keep object drift below 15 mm, no overload or unrelated collision.",
+  "object": {
+    "nominal_world_position": [
+      0.025,
+      0.065,
+      0.26
+    ],
+    "radius": 0.02,
+    "height": 0.025,
+    "mass": 0.06,
+    "friction": 1.2
+  },
+  "safety": {
+    "group_force_limit_N": 4.0,
+    "joint_effort_caps": "original model; unchanged",
+    "max_recovery": 1
+  },
+  "groups": [
+    "primary"
+  ],
+  "target_primary_site_world": [
+    -0.006999999999999999,
+    0.065,
+    0.26
+  ],
+  "palm_native_world_pose": {
+    "position": [
+      0.0,
+      0.0,
+      0.35
+    ],
+    "quaternion": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "task_frame": "palm origin + world-aligned fixed installation axes; native palm frame is retained in observations",
+  "initial_state": {
+    "time": 0.0,
+    "q": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "contacts": [],
+    "object_relative_pose": {
+      "position": [
+        0.025,
+        0.065,
+        -0.09
+      ],
+      "quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "phase": "IDLE",
+    "active_modes": [],
+    "grasp": "UNSTABLE",
+    "activated": null,
+    "mode_health": "INACTIVE",
+    "event": null,
+    "task_success": false,
+    "baseline_verified": false,
+    "hold_survived": false
+  },
+  "joint_definitions": [
+    {
+      "index": 0,
+      "name": "r_thumb_cmc_flex",
+      "range": [
+        -1.187,
+        1.291
+      ],
+      "effort_cap": [
+        -0.6,
+        0.6
+      ],
+      "body": 2,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 1,
+      "name": "r_thumb_cmc_abd",
+      "range": [
+        -1.484,
+        0.698
+      ],
+      "effort_cap": [
+        -0.6,
+        0.6
+      ],
+      "body": 3,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 2,
+      "name": "r_thumb_mcp",
+      "range": [
+        -1.047,
+        1.57
+      ],
+      "effort_cap": [
+        -0.3,
+        0.3
+      ],
+      "body": 4,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 3,
+      "name": "r_thumb_ip",
+      "range": [
+        -1.047,
+        1.57
+      ],
+      "effort_cap": [
+        -0.3,
+        0.3
+      ],
+      "body": 5,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 4,
+      "name": "r_index_finger_mcp_flex",
+      "range": [
+        -1.047,
+        1.57
+      ],
+      "effort_cap": [
+        -2.0,
+        2.0
+      ],
+      "body": 7,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 5,
+      "name": "r_index_finger_mcp_abd",
+      "range": [
+        -0.698,
+        0.698
+      ],
+      "effort_cap": [
+        -0.2,
+        0.2
+      ],
+      "body": 8,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 6,
+      "name": "r_index_finger_pip",
+      "range": [
+        -1.047,
+        2.094
+      ],
+      "effort_cap": [
+        -0.3,
+        0.3
+      ],
+      "body": 9,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 7,
+      "name": "r_index_finger_dip",
+      "range": [
+        -1.047,
+        1.57
+      ],
+      "effort_cap": [
+        -0.3,
+        0.3
+      ],
+      "body": 10,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 8,
+      "name": "r_middle_finger_mcp_flex",
+      "range": [
+        -1.047,
+        1.57
+      ],
+      "effort_cap": [
+        -2.0,
+        2.0
+      ],
+      "body": 12,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 9,
+      "name": "r_middle_finger_mcp_abd",
+      "range": [
+        -0.698,
+        0.698
+      ],
+      "effort_cap": [
+        -0.2,
+        0.2
+      ],
+      "body": 13,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 10,
+      "name": "r_middle_finger_pip",
+      "range": [
+        -1.047,
+        2.094
+      ],
+      "effort_cap": [
+        -0.3,
+        0.3
+      ],
+      "body": 14,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 11,
+      "name": "r_middle_finger_dip",
+      "range": [
+        -1.047,
+        1.57
+      ],
+      "effort_cap": [
+        -0.3,
+        0.3
+      ],
+      "body": 15,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 12,
+      "name": "r_ring_finger_mcp_flex",
+      "range": [
+        -1.047,
+        1.57
+      ],
+      "effort_cap": [
+        -2.0,
+        2.0
+      ],
+      "body": 17,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 13,
+      "name": "r_ring_finger_mcp_abd",
+      "range": [
+        -0.698,
+        0.698
+      ],
+      "effort_cap": [
+        -0.2,
+        0.2
+      ],
+      "body": 18,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 14,
+      "name": "r_ring_finger_pip",
+      "range": [
+        -1.047,
+        2.094
+      ],
+      "effort_cap": [
+        -0.3,
+        0.3
+      ],
+      "body": 19,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 15,
+      "name": "r_ring_finger_dip",
+      "range": [
+        -1.047,
+        1.57
+      ],
+      "effort_cap": [
+        -0.3,
+        0.3
+      ],
+      "body": 20,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 16,
+      "name": "r_pinky_mcp_flex",
+      "range": [
+        -1.047,
+        1.57
+      ],
+      "effort_cap": [
+        -2.0,
+        2.0
+      ],
+      "body": 22,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 17,
+      "name": "r_pinky_mcp_abd",
+      "range": [
+        -0.698,
+        0.698
+      ],
+      "effort_cap": [
+        -0.2,
+        0.2
+      ],
+      "body": 23,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 18,
+      "name": "r_pinky_pip",
+      "range": [
+        -1.047,
+        2.094
+      ],
+      "effort_cap": [
+        -0.3,
+        0.3
+      ],
+      "body": 24,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 19,
+      "name": "r_pinky_dip",
+      "range": [
+        -1.047,
+        1.57
+      ],
+      "effort_cap": [
+        -0.3,
+        0.3
+      ],
+      "body": 25,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "kinematic_chain": [
+    {
+      "body": 7,
+      "parent": 1,
+      "position": [
+        0.022661,
+        -0.0033252,
+        -0.069975
+      ],
+      "quaternion": [
+        0.9962671890051042,
+        -0.016387503108926768,
+        -0.06936761315995658,
+        0.04869570923822214
+      ]
+    },
+    {
+      "body": 8,
+      "parent": 7,
+      "position": [
+        0.0,
+        -0.001201,
+        -0.0145
+      ],
+      "quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": 9,
+      "parent": 8,
+      "position": [
+        0.0,
+        0.0,
+        -0.0376
+      ],
+      "quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": 10,
+      "parent": 9,
+      "position": [
+        0.0,
+        0.0,
+        -0.0295
+      ],
+      "quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "sites": {
+    "primary": {
+      "body": 10,
+      "local_position": [
+        0.0,
+        0.0,
+        -0.02475
+      ]
+    }
+  }
+}

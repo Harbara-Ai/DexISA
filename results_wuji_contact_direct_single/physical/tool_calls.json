@@ -1,0 +1,58 @@
+[
+  {
+    "name": "set_joint_targets",
+    "arguments": {
+      "duration": 0.4,
+      "targets": {
+        "4": 0.7,
+        "6": 1.18,
+        "7": 0.67
+      }
+    },
+    "simulation_time": 0.5880000000000004
+  },
+  {
+    "name": "set_joint_targets",
+    "arguments": {
+      "duration": 0.5,
+      "targets": {
+        "4": 0.9,
+        "6": 1.4,
+        "7": 0.85
+      }
+    },
+    "simulation_time": 1.0880000000000007
+  },
+  {
+    "name": "set_joint_targets",
+    "arguments": {
+      "duration": 0.5,
+      "targets": {
+        "4": 1.15,
+        "6": 1.75,
+        "7": 1.1
+      }
+    },
+    "simulation_time": 1.5880000000000012
+  },
+  {
+    "name": "set_joint_targets",
+    "arguments": {
+      "duration": 0.35,
+      "targets": {
+        "7": 1.4
+      }
+    },
+    "simulation_time": 1.9380000000000015
+  },
+  {
+    "name": "set_joint_targets",
+    "arguments": {
+      "duration": 0.35,
+      "targets": {
+        "5": 0.3
+      }
+    },
+    "simulation_time": 2.2879999999999696
+  }
+]

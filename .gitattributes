@@ -1,0 +1,2 @@
+# Preserve archived evidence bytes so SHA256 manifests verify on every platform.
+* -text

@@ -1,0 +1,32 @@
+[
+  {
+    "type": "function",
+    "name": "get_state",
+    "description": "Read current canonical contact and safety state.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "describe_capabilities",
+    "description": "Read supported contact capabilities and safety limits.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "MAKE_CONTACT",
+    "description": "Establish primary-group contact with the supported nominal cylinder using the existing guarded approach and safety limits. The hand is already preshaped; stop on success or terminal failure.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  }
+]

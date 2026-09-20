@@ -1,0 +1,15 @@
+{
+  "formal": false,
+  "purpose": "single_pair_comparison",
+  "requested_model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "episodes": 1,
+  "baseline_reused": "$WORKSPACE\\results_instrumentation_sanity\\instrumentation_sanity_result.json",
+  "benchmark_terminal_timeout_s": 180,
+  "timeout_origin": "first native turn/start dispatch, as in Skill runner",
+  "direct_physical_timeout_s": null,
+  "common_joint_velocity_threshold": null,
+  "contact_triggered_direct_stop": false,
+  "prompt_sha256": "72280943d5820d7a729a474611f029a0e836cdac0db954886b8cb536dd0ba4b6",
+  "tool_schema_sha256": "51428f517885d5447e7ebe566b53f50f538b47ae88cfccc76d81baa86b34f471"
+}
