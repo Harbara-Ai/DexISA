@@ -22,14 +22,15 @@ Native token usage and timing evidence are preserved in the [Skill sanity report
 
 ## Install and run
 
-Cloning or downloading this private repository gives you the **Skill instructions and runtime source**, but is not by itself enough to run a hand. You need repository access, Python 3.11+, installed Python dependencies, and the selected hand's separately obtained model and meshes. Open the cloned repository as the Codex workspace so Codex can discover its project Skill at `.agents/skills/dexisa/SKILL.md`; no separate global Skill copy is needed when working inside this repository. The Skill tells Codex how to use the bridge; it does not install or launch the runtime automatically.
+Cloning or downloading this private repository gives you the **Skill instructions and runtime source**, but is not by itself enough to run a hand. You need repository access, a working Python 3.11 or newer interpreter (use an existing installation if available), Python dependencies, and the selected hand's separately obtained model and meshes. Open the cloned repository as the Codex workspace so Codex can discover its project Skill at `.agents/skills/dexisa/SKILL.md`; no separate global Skill copy is needed when working inside this repository. The Skill tells Codex how to use the bridge; it does not install or launch the runtime automatically.
 
 On a new Windows machine, for example:
 
 ```powershell
 git clone https://github.com/Harbara-Ai/DexISA.git
 cd DexISA
-py -3.11 -m venv .venv
+python --version  # Confirm this is Python 3.11 or newer; install Python only if needed.
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -e .
 
