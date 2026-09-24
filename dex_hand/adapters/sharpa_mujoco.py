@@ -10,9 +10,12 @@ from dex_hand.sim.worlds import WorldConfig, compose_benchmark
 
 
 def find_sharpa_asset():
-    path=Path(os.environ.get("SHARPA_MJCF",str(Path(__file__).resolve().parents[2]/"assets/sharpa/right_sharpa_wave.xml")))
+    configured=os.environ.get("SHARPA_MJCF")
+    if not configured:
+        raise AdapterError(F.NOT_SUPPORTED,"Set SHARPA_MJCF to the external Sharpa Wave XML; XML, matching URDF and meshes are not bundled")
+    path=Path(configured).expanduser()
     if not path.is_file() or not path.with_suffix(".urdf").is_file():
-        raise AdapterError(F.NOT_SUPPORTED,"Sharpa official XML + matching URDF + meshes required; run scripts/fetch_sharpa.py")
+        raise AdapterError(F.NOT_SUPPORTED,f"Sharpa XML or matching URDF missing: {path}")
     return path.resolve()
 
 
@@ -23,7 +26,12 @@ def build_sharpa_world(config, asset=None, mount_pos=SHARPA_MOUNT):
     asset=Path(asset or find_sharpa_asset())
     root=ET.parse(asset).getroot()
     urdf=ET.parse(asset.with_suffix(".urdf")).getroot()
-    root.find("compiler").set("meshdir",str((asset.parent/"meshes").resolve()))
+    meshdir=(asset.parent/"meshes").resolve()
+    for mesh in root.findall("asset/mesh"):
+        mesh_path=meshdir/mesh.get("file", "")
+        if not mesh_path.is_file():
+            raise AdapterError(F.NOT_SUPPORTED,f"Sharpa mesh missing: {mesh_path}")
+    root.find("compiler").set("meshdir",str(meshdir))
     ET.SubElement(root,"option",timestep=str(config.timestep),integrator="implicitfast",gravity="0 0 -9.81",iterations="80")
     joints={j.get("name"):j for j in urdf.findall("joint")}
     # Source XML omits effort caps. Populate them from SAME official URDF.

@@ -1,11 +1,11 @@
 import json
 import re
-from pathlib import Path
+from importlib.resources import files
 from jsonschema import Draft202012Validator
 
 
 def spec_schema():
-    source = Path(__file__).resolve().parents[2]/"dexterous-hand-skill-mcp-spec-v0.2.md"
+    source = files("dex_hand").joinpath("schema/dexterous-hand-skill-mcp-spec-v0.2.md")
     for block in re.findall(r"```json\s*\n(.*?)\n```", source.read_text(encoding="utf-8"), re.S):
         doc=json.loads(block)
         if "$defs" in doc and "SkillOutcome" in doc["$defs"]:

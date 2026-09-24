@@ -3,3 +3,8 @@ __pycache__/
 .deps/
 .venv/
 *.egg-info/
+
+assets/
+build/
+dist/
+.wheel_test/

@@ -19,10 +19,12 @@ class WorldConfig:
 
 def find_wuji_asset():
     configured = os.environ.get("WUJI_MJCF")
-    candidate = Path(configured) if configured else Path(__file__).resolve().parents[3] / "wuji-hand2-reorient/src/wuji_mjlab/assets/robots/wuji_hand2/mjcf/right.xml"
+    if not configured:
+        raise FileNotFoundError("Set WUJI_MJCF to the external Wuji Hand2 right.xml; model and meshes are not bundled")
+    candidate = Path(configured).expanduser()
     if not candidate.is_file():
-        raise FileNotFoundError(f"Real Hand2 right.xml and relative meshes required; set WUJI_MJCF. Missing: {candidate}")
-    return candidate
+        raise FileNotFoundError(f"WUJI_MJCF model missing: {candidate}")
+    return candidate.resolve()
 
 
 def build_world(config=WorldConfig(), asset=None):
@@ -33,7 +35,12 @@ def build_world(config=WorldConfig(), asset=None):
     asset = Path(asset or find_wuji_asset()).resolve()
     root = ET.parse(asset).getroot()
     compiler = root.find("compiler")
-    compiler.set("meshdir", str((asset.parent / compiler.get("meshdir", "")).resolve()))
+    meshdir = (asset.parent / compiler.get("meshdir", "")).resolve()
+    for mesh in root.findall("asset/mesh"):
+        mesh_path = meshdir / mesh.get("file", "")
+        if not mesh_path.is_file():
+            raise FileNotFoundError(f"Wuji mesh missing: {mesh_path}")
+    compiler.set("meshdir", str(meshdir))
     option = root.find("option")
     option.set("timestep", str(config.timestep))
     option.set("integrator", "implicitfast")

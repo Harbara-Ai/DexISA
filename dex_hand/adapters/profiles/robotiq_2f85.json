@@ -1,0 +1,173 @@
+{
+  "model": "Robotiq 2F-85 standard parallel fingers",
+  "morphology": "parallel_gripper_one_actuated_coordinate",
+  "joint_definitions": [
+    {
+      "name": "robotiq_85_left_knuckle_joint",
+      "unit": "rad",
+      "lower": 0.0,
+      "upper": 0.8,
+      "velocity": 0.5,
+      "effort": 50.0,
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ]
+    }
+  ],
+  "mimic_joints": [
+    {
+      "name": "robotiq_85_right_knuckle_joint",
+      "unit": "rad",
+      "lower": -0.8,
+      "upper": 0.0,
+      "velocity": 0.5,
+      "effort": 50.0,
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "mimic": {
+        "joint": "robotiq_85_left_knuckle_joint",
+        "multiplier": -1.0,
+        "offset": 0.0
+      }
+    },
+    {
+      "name": "robotiq_85_left_inner_knuckle_joint",
+      "unit": "rad",
+      "lower": 0.0,
+      "upper": 0.8,
+      "velocity": 0.5,
+      "effort": 50.0,
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "mimic": {
+        "joint": "robotiq_85_left_knuckle_joint",
+        "multiplier": 1.0,
+        "offset": 0.0
+      }
+    },
+    {
+      "name": "robotiq_85_right_inner_knuckle_joint",
+      "unit": "rad",
+      "lower": -0.8,
+      "upper": 0.0,
+      "velocity": 0.5,
+      "effort": 50.0,
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "mimic": {
+        "joint": "robotiq_85_left_knuckle_joint",
+        "multiplier": -1.0,
+        "offset": 0.0
+      }
+    },
+    {
+      "name": "robotiq_85_left_finger_tip_joint",
+      "unit": "rad",
+      "lower": -0.8,
+      "upper": 0.0,
+      "velocity": 0.5,
+      "effort": 50.0,
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "mimic": {
+        "joint": "robotiq_85_left_knuckle_joint",
+        "multiplier": -1.0,
+        "offset": 0.0
+      }
+    },
+    {
+      "name": "robotiq_85_right_finger_tip_joint",
+      "unit": "rad",
+      "lower": 0.0,
+      "upper": 0.8,
+      "velocity": 0.5,
+      "effort": 50.0,
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "mimic": {
+        "joint": "robotiq_85_left_knuckle_joint",
+        "multiplier": 1.0,
+        "offset": 0.0
+      }
+    }
+  ],
+  "initial_positions": [
+    0.7929
+  ],
+  "postures": {
+    "OPEN": [
+      0.0
+    ],
+    "CLOSED": [
+      0.7929
+    ]
+  },
+  "contact_groups": {
+    "primary": "robotiq_85_left_finger_tip_link",
+    "opposition": "robotiq_85_right_finger_tip_link"
+  },
+  "coupled_contact_groups": true,
+  "closed_position_rad": 0.7929,
+  "register_open": 3,
+  "register_closed": 230,
+  "max_opening_m": 0.085,
+  "current_A_per_count": 0.01,
+  "source_files": [
+    "robotiq_ros/grippers/robotiq_description/urdf/robotiq_2f_85_macro.urdf.xacro",
+    "robotiq_ros/grippers/robotiq_description/urdf/2f_85.ros2_control.xacro",
+    "robotiq_ros/grippers/robotiq_driver/include/robotiq_driver/gripper_scaling.hpp",
+    "robotiq_grippers/sdk_cpp/include/Robotiq/gripper/device_profile.hpp"
+  ],
+  "sources": [
+    {
+      "repo": "robotiq/ros",
+      "commit": "8d7b8412ad685ffe1db5719da6e8fce6c1896e5e",
+      "path": "grippers/robotiq_description/urdf/2f_85.ros2_control.xacro",
+      "url": "https://raw.githubusercontent.com/robotiq/ros/8d7b8412ad685ffe1db5719da6e8fce6c1896e5e/grippers/robotiq_description/urdf/2f_85.ros2_control.xacro",
+      "local_path": "assets/embodiment_audit/robotiq_ros/grippers/robotiq_description/urdf/2f_85.ros2_control.xacro",
+      "sha256": "a0d097f1753cc040f4f6778bdaa1da9c10c6c0e85afe8292c42fe103353e48fe"
+    },
+    {
+      "repo": "robotiq/ros",
+      "commit": "8d7b8412ad685ffe1db5719da6e8fce6c1896e5e",
+      "path": "grippers/robotiq_description/urdf/robotiq_2f_85_macro.urdf.xacro",
+      "url": "https://raw.githubusercontent.com/robotiq/ros/8d7b8412ad685ffe1db5719da6e8fce6c1896e5e/grippers/robotiq_description/urdf/robotiq_2f_85_macro.urdf.xacro",
+      "local_path": "assets/embodiment_audit/robotiq_ros/grippers/robotiq_description/urdf/robotiq_2f_85_macro.urdf.xacro",
+      "sha256": "bfa97d612cf0df29079ab1d0bdcb5f6a8d14fc1563230eb2758008d8a12dc36b"
+    },
+    {
+      "repo": "robotiq/grippers",
+      "commit": "6aef1e548248c8cdbc172d586a2e1c136f176207",
+      "path": "sdk_cpp/include/Robotiq/gripper/device_profile.hpp",
+      "url": "https://raw.githubusercontent.com/robotiq/grippers/6aef1e548248c8cdbc172d586a2e1c136f176207/sdk_cpp/include/Robotiq/gripper/device_profile.hpp",
+      "local_path": "assets/embodiment_audit/robotiq_grippers/sdk_cpp/include/Robotiq/gripper/device_profile.hpp",
+      "sha256": "c780399ac506faa376234ede0567d7b7b6c74c3b091d658149df88c48cdb573a"
+    },
+    {
+      "repo": "robotiq/ros",
+      "commit": "8d7b8412ad685ffe1db5719da6e8fce6c1896e5e",
+      "path": "grippers/robotiq_driver/include/robotiq_driver/gripper_scaling.hpp",
+      "url": "https://raw.githubusercontent.com/robotiq/ros/8d7b8412ad685ffe1db5719da6e8fce6c1896e5e/grippers/robotiq_driver/include/robotiq_driver/gripper_scaling.hpp",
+      "local_path": "assets/embodiment_audit/robotiq_ros/grippers/robotiq_driver/include/robotiq_driver/gripper_scaling.hpp",
+      "sha256": "24ab4293a63f038c388260d18e4c025faa20d60ad2011bf266eb8c3d777b99c9"
+    }
+  ],
+  "scope": "OFFLINE_MOCK_ONLY; source limits are not hardware-safe validation"
+}
