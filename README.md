@@ -22,7 +22,7 @@ Native token usage and timing evidence are preserved in the [Skill sanity report
 
 ## Install and run
 
-Cloning or downloading this private repository gives you the **Skill instructions and runtime source**, but is not by itself enough to run a hand. You need repository access, a working Python 3.11 or newer interpreter (use an existing installation if available), Python dependencies, and the selected hand's separately obtained model and meshes. Open the cloned repository as the Codex workspace so Codex can discover its project Skill at `.agents/skills/dexisa/SKILL.md`; no separate global Skill copy is needed when working inside this repository. The Skill tells Codex how to use the bridge; it does not install or launch the runtime automatically.
+Cloning or downloading this repository gives you the **Skill instructions and runtime source**, but is not by itself enough to run a hand. You need a working Python 3.11 or newer interpreter (use an existing installation if available), Python dependencies, and the selected hand's separately obtained model and meshes. Open the cloned repository as the Codex workspace so Codex can discover its project Skill at `.agents/skills/dexisa/SKILL.md`; no separate global Skill copy is needed when working inside this repository. The Skill tells Codex how to use the bridge; it does not install or launch the runtime automatically.
 
 On a new Windows machine, for example:
 
@@ -39,7 +39,7 @@ $env:SHARPA_MJCF = 'C:\models\sharpa_wave\right_sharpa_wave.xml'
 dexisa-mujoco --hand sharpa
 ```
 
-The bridge prints a `READY` JSON line when the selected scene loads. In Codex, open this `DexISA` folder and explicitly ask it to use `$dexisa` with one selected hand in offline MuJoCo. For Wuji, Allegro, or Robotiq, set the corresponding model path instead; Allegro and Robotiq also require the local model-generation step in [docs/ASSETS.md](docs/ASSETS.md). A GitHub ZIP works as source too, but the `git clone` command above requires access to the private repository.
+The bridge prints a `READY` JSON line when the selected scene loads. In Codex, open this `DexISA` folder and explicitly ask it to use `$dexisa` with one selected hand in offline MuJoCo. For Wuji, Allegro, or Robotiq, set the corresponding model path instead; Allegro and Robotiq also require the local model-generation step in [docs/ASSETS.md](docs/ASSETS.md). A GitHub ZIP works as source too.
 
 The equivalent platform-neutral runtime commands are:
 
@@ -66,4 +66,4 @@ This package is simulation-only. It contains no Wuji real-hardware transport, SD
 
 The earlier research publication and its non-formal experiments remain in [LEGACY_PUBLICATION.md](LEGACY_PUBLICATION.md). They are historical evidence, not four-hand installation instructions.
 
-The DexISA code in this repository has no top-level redistribution license declared yet. Before making the repository public or redistributing a release, the owner should choose a code license and review all retained historical artifacts. The repository remains private unless the owner changes its visibility.
+The DexISA code in this public repository has no top-level redistribution license declared yet. Public visibility does not itself grant permission to redistribute or modify the code; the owner should choose a code license before inviting downstream reuse. Vendor hand models and meshes remain external under their own license terms.
