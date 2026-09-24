@@ -2,9 +2,45 @@
 
 DexISA is an offline MuJoCo reference runtime for semantic physical-interaction Skills across Wuji Hand2, Sharpa Wave, Allegro V5 4F, and Robotiq 2F-85. The Codex entrypoint is [.agents/skills/dexisa/SKILL.md](.agents/skills/dexisa/SKILL.md); executable Python lives in the installable `dex_hand` package. The Skill is not a substitute for installing the runtime.
 
+## Latest experiment (2026-09-20)
+
+This is a **non-formal, single-pair Wuji CONTACT comparison**. Both episodes succeeded in the same nominal scene with equivalent initial states. The Skill result is an existing instrumentation sanity run; only the Direct episode was run afterward. It is preliminary evidence, not a four-hand benchmark or a statistically supported performance claim.
+
+| Metric | Skill sanity baseline | Direct single episode |
+| --- | ---: | ---: |
+| Outcome | SUCCESS | SUCCESS |
+| Native input tokens | 7,216 | 49,173 |
+| Native output tokens | 65 | 871 |
+| Total tokens | 7,281 | 50,044 |
+| Decision cycles | 2 | 7 |
+| Control interventions | 1 | 5 |
+| Robot tool calls | 1 | 6 |
+| T_active (s) | 4.5775069 | 40.8632101 |
+| T_physical (s) | 0.676 | 2.100 |
+
+Native token usage and timing evidence are preserved in the [Skill sanity report](results_instrumentation_sanity/INSTRUMENTATION_SANITY_REPORT.md), [Direct pair report](results_wuji_contact_direct_single/WUJI_CONTACT_DIRECT_SINGLE.md), and [pair comparison JSON](results_wuji_contact_direct_single/pair_comparison.json). The [publication manifest](PUBLICATION_MANIFEST.json) records the sanitization of the archived traces; its runtime-file hashes refer to the 2026-09-20 publication snapshot, while the current runtime has since evolved. See [LEGACY_PUBLICATION.md](LEGACY_PUBLICATION.md) for measurement limitations, including differences in prompts, tool schemas, and stopping behavior; the token gap cannot be attributed solely to the Skill interface.
+
 ## Install and run
 
-Use Python 3.11+ in a virtual environment:
+Cloning or downloading this private repository gives you the **Skill instructions and runtime source**, but is not by itself enough to run a hand. You need repository access, Python 3.11+, installed Python dependencies, and the selected hand's separately obtained model and meshes. Open the cloned repository as the Codex workspace so Codex can discover its project Skill at `.agents/skills/dexisa/SKILL.md`; no separate global Skill copy is needed when working inside this repository. The Skill tells Codex how to use the bridge; it does not install or launch the runtime automatically.
+
+On a new Windows machine, for example:
+
+```powershell
+git clone https://github.com/Harbara-Ai/DexISA.git
+cd DexISA
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -e .
+
+# Obtain the selected hand's model and meshes separately (docs/ASSETS.md).
+$env:SHARPA_MJCF = 'C:\models\sharpa_wave\right_sharpa_wave.xml'
+dexisa-mujoco --hand sharpa
+```
+
+The bridge prints a `READY` JSON line when the selected scene loads. In Codex, open this `DexISA` folder and explicitly ask it to use `$dexisa` with one selected hand in offline MuJoCo. For Wuji, Allegro, or Robotiq, set the corresponding model path instead; Allegro and Robotiq also require the local model-generation step in [docs/ASSETS.md](docs/ASSETS.md). A GitHub ZIP works as source too, but the `git clone` command above requires access to the private repository.
+
+The equivalent platform-neutral runtime commands are:
 
 ```sh
 python -m pip install -e .
