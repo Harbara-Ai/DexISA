@@ -2,9 +2,9 @@
 
 DexISA is an offline MuJoCo reference runtime for semantic physical-interaction Skills across Wuji Hand2, Sharpa Wave, Allegro V5 4F, and Robotiq 2F-85. The Codex entrypoint is [.agents/skills/dexisa/SKILL.md](.agents/skills/dexisa/SKILL.md); executable Python lives in the installable `dex_hand` package. The Skill is not a substitute for installing the runtime.
 
-## Latest experiment (2026-09-20)
+## Latest experiment: Wuji GUARDED_CONTACT in MuJoCo (2026-09-20)
 
-This is a **non-formal, single-pair Wuji CONTACT comparison**. Both episodes succeeded in the same nominal scene with equivalent initial states. The Skill result is an existing instrumentation sanity run; only the Direct episode was run afterward. It is preliminary evidence, not a four-hand benchmark or a statistically supported performance claim.
+This is a **non-formal, single-pair Wuji GUARDED_CONTACT comparison in MuJoCo physics simulation**. Contact and object motion come from the simulated hand model and MuJoCo contact dynamics, not a scripted contact flag or a run on physical hardware. Both episodes succeeded in the same nominal scene with equivalent initial states. The Skill result is an existing instrumentation sanity run; only the Direct episode was run afterward. It is preliminary evidence, not a four-hand benchmark or a statistically supported performance claim.
 
 | Metric | Skill sanity baseline | Direct single episode |
 | --- | ---: | ---: |
