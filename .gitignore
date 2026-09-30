@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.deps/
+.venv/
+*.egg-info/
+
+assets/
+build/
+dist/
+.wheel_test/
+# Local pilot outputs; archived preliminary results are not published.
+results_contact_native/
+results_instrumentation_sanity/
+results_wuji_contact_direct_single/
+
+# Generated evaluation runs are local, not historical publications.
+results_pilot/
+MUJOCO_LOG.TXT

@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "object_id": {
+      "type": "string"
+    },
+    "contact_groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/VirtualContactGroup"
+      },
+      "minItems": 1
+    },
+    "approach": {
+      "type": "object",
+      "properties": {
+        "frame": {
+          "$ref": "#/$defs/Frame"
+        },
+        "direction": {
+          "$ref": "#/$defs/Vec3"
+        },
+        "max_displacement_m": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0.05
+        },
+        "speed_m_s": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0.02
+        }
+      },
+      "additionalProperties": false
+    },
+    "contact_force_limit_n": {
+      "type": "number",
+      "minimum": 0,
+      "default": 1.0
+    },
+    "require_all_required_groups": {
+      "type": "boolean",
+      "default": true
+    },
+    "stop_on_first_contact": {
+      "type": "boolean",
+      "default": false
+    },
+    "timeout_s": {
+      "type": "number",
+      "default": 10.0
+    }
+  },
+  "required": [
+    "object_id",
+    "contact_groups"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "Vec3": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "Frame": {
+      "type": "string",
+      "description": "所有位姿、方向、wrench 必须显式声明参考系。",
+      "enum": [
+        "world",
+        "palm",
+        "object",
+        "contact",
+        "support_surface",
+        "constraint_axis",
+        "tool"
+      ]
+    },
+    "VirtualContactGroup": {
+      "type": "object",
+      "description": "跨 embodiment 的功能接触组。数量不固定，Adapter 映射到具体 fingers/links。",
+      "properties": {
+        "group_id": {
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/$defs/VirtualContactRole"
+        },
+        "target_region": {
+          "$ref": "#/$defs/TargetRegion"
+        },
+        "required": {
+          "type": "boolean",
+          "default": true
+        },
+        "min_contact_count": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 1
+        }
+      },
+      "required": [
+        "group_id",
+        "role"
+      ],
+      "additionalProperties": false
+    },
+    "TargetRegion": {
+      "type": "object",
+      "properties": {
+        "object_id": {
+          "type": "string"
+        },
+        "region_id": {
+          "type": "string"
+        },
+        "center": {
+          "$ref": "#/$defs/Vec3"
+        },
+        "normal": {
+          "$ref": "#/$defs/Vec3"
+        },
+        "radius": {
+          "type": "number",
+          "minimum": 0
+        },
+        "feature_type": {
+          "type": "string",
+          "enum": [
+            "surface",
+            "edge",
+            "vertex",
+            "handle",
+            "fixture",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "object_id"
+      ],
+      "additionalProperties": false
+    },
+    "VirtualContactRole": {
+      "type": "string",
+      "enum": [
+        "opposition",
+        "support",
+        "stabilization",
+        "manipulation",
+        "actuation"
+      ]
+    }
+  }
+}

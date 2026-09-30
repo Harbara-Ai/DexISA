@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "object_id": {
+      "type": "string"
+    },
+    "target_group_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "省略表示解除该 object 的全部 hand contacts。"
+    },
+    "support": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "surface",
+            "other_hand",
+            "fixture",
+            "self_stable",
+            "none"
+          ]
+        },
+        "support_id": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "allow_drop": {
+      "type": "boolean",
+      "default": false
+    },
+    "release_mode": {
+      "type": "string",
+      "enum": [
+        "simultaneous",
+        "sequential"
+      ],
+      "default": "sequential"
+    },
+    "group_order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "force_ramp_down_s": {
+      "type": "number",
+      "minimum": 0,
+      "default": 0.8
+    },
+    "max_object_drift_m": {
+      "type": "number",
+      "minimum": 0,
+      "default": 0.005
+    },
+    "retreat_distance_m": {
+      "type": "number",
+      "minimum": 0,
+      "default": 0.03
+    },
+    "timeout_s": {
+      "type": "number",
+      "default": 8.0
+    }
+  },
+  "required": [
+    "object_id",
+    "support"
+  ],
+  "additionalProperties": false
+}

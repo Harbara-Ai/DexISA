@@ -1,0 +1,281 @@
+{
+  "model": "Allegro Hand V5 4F right B",
+  "morphology": "four_finger_16_dof",
+  "joint_definitions": [
+    {
+      "name": "joint_0_0",
+      "unit": "rad",
+      "lower": -0.3,
+      "upper": 0.3,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "joint_1_0",
+      "unit": "rad",
+      "lower": -0.01,
+      "upper": 1.6,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_2_0",
+      "unit": "rad",
+      "lower": -0.07,
+      "upper": 1.86,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_3_0",
+      "unit": "rad",
+      "lower": -0.02,
+      "upper": 2.01,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_4_0",
+      "unit": "rad",
+      "lower": -0.26,
+      "upper": 0.26,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "joint_5_0",
+      "unit": "rad",
+      "lower": -0.21,
+      "upper": 1.79,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_6_0",
+      "unit": "rad",
+      "lower": -0.12,
+      "upper": 1.86,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_7_0",
+      "unit": "rad",
+      "lower": -0.21,
+      "upper": 1.85,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_8_0",
+      "unit": "rad",
+      "lower": -0.26,
+      "upper": 0.29,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "joint_9_0",
+      "unit": "rad",
+      "lower": -0.21,
+      "upper": 1.79,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_10_0",
+      "unit": "rad",
+      "lower": -0.12,
+      "upper": 1.86,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_11_0",
+      "unit": "rad",
+      "lower": -0.21,
+      "upper": 1.85,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_12_0",
+      "unit": "rad",
+      "lower": 0.0,
+      "upper": 1.78,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_13_0",
+      "unit": "rad",
+      "lower": -0.26,
+      "upper": 1.65,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "joint_14_0",
+      "unit": "rad",
+      "lower": -0.05,
+      "upper": 1.85,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "joint_15_0",
+      "unit": "rad",
+      "lower": -0.09,
+      "upper": 1.8,
+      "velocity": 7.0,
+      "effort": 15.0,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "initial_positions": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.57,
+    0.0,
+    0.0
+  ],
+  "postures": {
+    "MODEL_INITIAL": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.57,
+      0.0,
+      0.0
+    ]
+  },
+  "contact_groups": {
+    "primary": "link_3_0_tip",
+    "auxiliary": "link_7_0_tip",
+    "auxiliary_2": "link_11_0_tip",
+    "opposition": "link_15_0_tip"
+  },
+  "source_files": [
+    "Wonikrobotics-git_allegro_hand_ros2_v5/src/allegro_hand_controllers/urdf/allegro_hand_description_right_B.urdf",
+    "Wonikrobotics-git_allegro_hand_ros2_v5/src/allegro_hand_moveit/config/initial_positions.yaml"
+  ],
+  "sources": [
+    {
+      "repo": "Wonikrobotics-git/allegro_hand_ros2_v5",
+      "commit": "80bd4a88d2c59b8ad0242ec3730302bde61c84fb",
+      "path": "src/allegro_hand_controllers/urdf/allegro_hand_description_right_B.urdf",
+      "url": "https://raw.githubusercontent.com/Wonikrobotics-git/allegro_hand_ros2_v5/80bd4a88d2c59b8ad0242ec3730302bde61c84fb/src/allegro_hand_controllers/urdf/allegro_hand_description_right_B.urdf",
+      "local_path": "assets/embodiment_audit/Wonikrobotics-git_allegro_hand_ros2_v5/src/allegro_hand_controllers/urdf/allegro_hand_description_right_B.urdf",
+      "sha256": "d0a024a6259b846336d765b6b246f06149ffa1380846a8adb2da74f5a765c910"
+    },
+    {
+      "repo": "Wonikrobotics-git/allegro_hand_ros2_v5",
+      "commit": "80bd4a88d2c59b8ad0242ec3730302bde61c84fb",
+      "path": "src/allegro_hand_moveit/config/initial_positions.yaml",
+      "url": "https://raw.githubusercontent.com/Wonikrobotics-git/allegro_hand_ros2_v5/80bd4a88d2c59b8ad0242ec3730302bde61c84fb/src/allegro_hand_moveit/config/initial_positions.yaml",
+      "local_path": "assets/embodiment_audit/Wonikrobotics-git_allegro_hand_ros2_v5/src/allegro_hand_moveit/config/initial_positions.yaml",
+      "sha256": "6bc966e59a129152fd36eefd39395d68ddc6586c54bd9263023348d092457ee9"
+    }
+  ],
+  "scope": "OFFLINE_MOCK_ONLY; source limits are not hardware-safe validation"
+}

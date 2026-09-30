@@ -1,0 +1,7 @@
+include ARCHITECTURE*.md PARAMETER_CLASSIFICATION.md REFACTOR*.md
+include dexterous-hand-skill-mcp-spec-v0.2.md agent-interface-*-spec-v0.2.md
+recursive-include spec *.md *.json
+recursive-include docs *.md *.json *.csv *.png
+recursive-include .agents/skills/dexisa *.md *.yaml
+recursive-include scripts *.py
+recursive-include tests *.py *.json

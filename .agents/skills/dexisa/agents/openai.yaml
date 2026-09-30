@@ -1,0 +1,4 @@
+interface:
+  display_name: "DexISA"
+  short_description: "Control four dexterous hands through DexISA in MuJoCo"
+  default_prompt: "Use $dexisa to inspect a MuJoCo hand and complete the requested physical-interaction task."
