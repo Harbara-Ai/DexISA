@@ -1,6 +1,6 @@
-# Parameter classification — source baseline
+# Parameter classification — historical baseline and Phase 2 ownership
 
-A = task operand; B = execution constraint; C = termination; D = runtime default; E = private controller/Adapter realization; F = retained hard invariant. A/B/C classification does not mean every field is exposed by the current bridge. D labels the fallback value independently of the parameter role.
+The table records the earlier design classification of direct Python Skill parameters. In Phase 2, the Agent JSONL MAKE_CONTACT API exposes only A object/group operands and C termination. B guard parameters remain internal reference policy, not Agent constraints. D labels fallback values independently of historical role; E is private realization and F retained hard safety. Other Skill APIs are not parameterized here.
 
 | Entry point | Parameter | Role | Existing fallback |
 | --- | --- | --- | --- |
@@ -61,7 +61,7 @@ A = task operand; B = execution constraint; C = termination; D = runtime default
 
 ## Interpretation and invariants
 
-- MAKE_CONTACT speed is the current private guarded-approach realization (draft has approach.speed_m_s, but this pilot does not expose controller tuning). max_displacement, max_load, max_object_drift and timeout are task constraints; require_all_groups is contact event termination. Frame/direction are operands but non-default forms are explicitly unsupported.
+- MAKE_CONTACT speed is the current private guarded-approach realization (draft has approach.speed_m_s, but this pilot does not expose controller tuning). max_displacement, max_load, max_object_drift and timeout are internal reference guards; require_all_groups is the unchanged internal all-required contact event policy. Frame/direction are operands but non-default forms are explicitly unsupported.
 - ESTABLISH_GRASP minimum_load defines BASELINE_STATIC_V1 acceptance, not an arbitrary wrench guarantee. target_load is desired preload; actual regulation gain/clamps are E. required_wrench_set remains NOT_SUPPORTED.
 - MAINTAIN_GRASP target_load is interaction intent; max_load/max_drift/recovery_budget are bounded maintenance constraints. Mode update may tighten drift only. They are not evaluation hold duration.
 - BREAK_CONTACT support/drop are task support intent/authorization. The no-drop observed-support check is a retained F conditional guard; do not weaken it. Retreat is a reference termination target. Speed is private.
@@ -69,4 +69,4 @@ A = task operand; B = execution constraint; C = termination; D = runtime default
 - ShapeHand configuration tolerance 0.002 m and BreakContact clear dwell 0.1 s are existing D reference semantics, independently of evaluation rules with the same numbers. No consolidation in Phase 1.
 - F: source joint ranges/actuator effort limits, forbidden collision handling, explicit backend faults and finite-state checks in Adapter.step. No vendor absolute contact-force rating is inferred from the runtime 4 N default.
 - E: IK iterations, residual thresholds, morphology normals/sites/mimic projection, gains and per-step increments remain untouched.
-- The new MAKE_CONTACT pilot accepts only object/group operands, bounded constraint fields and contact_present/contact_stable termination. Legacy defaults continue to come from the existing Skill signature.
+- The current MAKE_CONTACT API accepts only object/group operands and contact_present/contact_dwell termination. Its keyword-only contact_dwell_s defaults to zero; dwell metadata uses the same name. Legacy guards continue to come from the existing Skill signature. Generic Agent-visible execution constraints are deferred; Adapter capabilities answer availability, and source model/backend safety remains non-negotiable.

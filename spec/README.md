@@ -1,11 +1,15 @@
-# ISA specification
+# ISA specification status
 
-The [v0.2 normative Markdown](../dexterous-hand-skill-mcp-spec-v0.2.md) remains the semantic baseline. It defines SHAPE_HAND, MAKE_CONTACT, ESTABLISH_GRASP, MANIPULATE_IN_CONTACT, CHANGE_CONTACTS, APPLY_WRENCH, FOLLOW_CONSTRAINT, BREAK_CONTACT, PROBE_INTERACTION and persistent MAINTAIN_GRASP.
+The machine-readable MAKE_CONTACT schema is the current implemented public argument contract, not an extract of the old v0.2 draft. It includes only object_id, contact_groups and termination (contact_present/contact_dwell); generic Agent-visible constraints are intentionally deferred.
 
-ContactState, VirtualContactGroup, ConstraintAllocation, TerminationSemantics, CanonicalObservation, FailureClass, SkillOutcome, Capability and belief/uncertainty remain in that document. The packaged copy in dex_hand/schema supports installed outcome validation and is checked for byte equality.
+| File | Status |
+| --- | --- |
+| [instructions/make_contact.schema.json](instructions/make_contact.schema.json) | Canonical implemented MAKE_CONTACT arguments; matches Runtime validation |
+| [instructions/break_contact.schema.json](instructions/break_contact.schema.json) | Historical broader draft extract; not a parameterized implemented BREAK_CONTACT API |
+| [v0.2 Markdown](../dexterous-hand-skill-mcp-spec-v0.2.md) | Broader design draft / historical semantic reference; not fully equivalent to current callable APIs |
 
-instructions/make_contact.schema.json and break_contact.schema.json are exact Draft 2020-12 input-schema extracts including referenced shared types. They preserve draft defaults, rather than silently replacing reference-controller defaults. Reproduce/check with `python scripts/extract_instruction_schemas.py [--check]`. Other schemas are not migrated in Phase 1.
+The draft taxonomy (including persistent MAINTAIN_GRASP), ContactState, VirtualContactGroup, ConstraintAllocation, TerminationSemantics, FailureClass, SkillOutcome, Capability and belief/uncertainty concepts are preserved. The draft's packaged Markdown copy still validates existing result shapes. Its input defaults do not override reference controllers.
 
-The implemented JSONL subset is documented separately in [docs/MAKE_CONTACT_INTERFACE.md](../docs/MAKE_CONTACT_INTERFACE.md). Its scene group IDs and constraints/termination envelope are an incremental reference pilot, not the full normative wire schema.
+Edit the canonical MAKE_CONTACT file, then run `python scripts/extract_instruction_schemas.py` to sync the packaged mirror. `--check` verifies byte equality and checks the separate BREAK_CONTACT draft extraction. Runtime loads dex_hand/schema/make_contact.schema.json through importlib.resources; its accepted argument keys come from this schema. Generation no longer replaces MAKE_CONTACT with an old draft extract.
 
-See [ARCHITECTURE.md](../ARCHITECTURE.md) for parameter ownership and [PARAMETER_CLASSIFICATION.md](../PARAMETER_CLASSIFICATION.md) for the current execution signatures.
+Current examples, omissions, dynamic availability checks and failure handling: [docs/MAKE_CONTACT_INTERFACE.md](../docs/MAKE_CONTACT_INTERFACE.md). Ownership and dependency injection: [ARCHITECTURE.md](../ARCHITECTURE.md). Other instruction parameterization is deferred.

@@ -1,50 +1,56 @@
-# MAKE_CONTACT JSONL pilot
+# MAKE_CONTACT implemented public interface — Phase 2
 
-This is the implemented Phase 1 reference subset. It reuses dex_hand/skills/make_contact.py and Adapter primitives. It is distinct from the broader [normative draft schema](../spec/instructions/make_contact.schema.json).
+The canonical argument contract is [spec/instructions/make_contact.schema.json](../spec/instructions/make_contact.schema.json). The Runtime validates requests against its packaged mirror. The old v0.2 Markdown describes a broader historical design, not this API.
 
-## Legacy compatibility
+Current instruction = opcode + object/contact operands + termination. Agent-visible constraints are intentionally deferred. No speed, force, drift, travel, timeout or gain operand is accepted.
 
-`{"tool":"MAKE_CONTACT"}` and empty arguments resolve to `target` and the existing selected-hand scene plan. Controller defaults are unchanged: speed 0.008 m/s, displacement 0.045 m, group load 4 N, object relative drift 0.015 m, deadline 8 s, all required groups, immediate contact-event termination. They come from the Skill signature, not duplicated bridge constants.
+## Supported requests
 
-## Parameterized request
+```json
+{"tool":"MAKE_CONTACT"}
+```
 
 ```json
 {
   "tool": "MAKE_CONTACT",
   "arguments": {
     "object_id": "target",
-    "contact_groups": ["primary", "opposition"],
-    "constraints": {
-      "max_normal_force_n": 2.0,
-      "max_object_drift_m": 0.002,
-      "forbid_unplanned_contact": true
-    },
-    "termination": {"type": "contact_stable", "duration_s": 0.1}
+    "contact_groups": ["primary"],
+    "termination": {"type": "contact_present"}
   }
 }
 ```
 
-| Field | Supported meaning |
+```json
+{
+  "tool": "MAKE_CONTACT",
+  "arguments": {
+    "termination": {"type": "contact_dwell", "duration_s": 0.1}
+  }
+}
+```
+
+| Field | Meaning |
 | --- | --- |
-| object_id | Existing observed scene object; current scenes have only target |
-| contact_groups | Nonempty unique IDs from the session's existing region plan; order retained; omission keeps whole plan |
-| constraints.max_normal_force_n | Positive per-contact-group summed normal load; may tighten 4 N reference envelope |
-| constraints.max_object_drift_m | Nonnegative displacement of canonical relative object position from the instruction-entry reference; may tighten 0.015 m |
-| constraints.max_displacement_m | Nonnegative commanded inward displacement budget per group; may tighten 0.045 m |
-| constraints.timeout_s | Positive total simulation deadline including acquisition and requested dwell; may tighten 8 s |
-| constraints.forbid_unplanned_contact | Only true is supported; existing nonparticipating-contact rejection is retained |
-| termination.type | contact_present (default) or contact_stable |
-| termination.duration_s | Required positive continuous dwell for contact_stable; rejected for contact_present |
-| termination.require_all_groups | Boolean, default true; false uses existing any-required-group event |
+| object_id | Existing observed scene object; omission uses ScenePlan.object_id (target in supplied bindings) |
+| contact_groups | Nonempty unique prepared group IDs; order retained; omission uses ScenePlan.groups |
+| termination.type | contact_present (default) or contact_dwell |
+| termination.duration_s | Required positive finite continuous contact duration for contact_dwell; rejected for contact_present |
 
-Contact_stable means continuously observed requested contact presence while existing collision/load/drift guards remain satisfied. It does **not** mean stable grasp, frictional wrench feasibility, force closure or a task score. The dwell timer starts at the first qualifying observation, resets on loss, and counts actual simulation timestamps. It does not regulate grasp force. Prepared servo targets remain active during dwell; this can legitimately produce a constraint failure.
+An omitted or empty termination object means contact_present. All selected required groups must meet the existing contact event. There is no public require_all_groups override. Object/group availability is checked against the Adapter and prepared scene; an accepted contract does not create objects, regions or prove reachability.
 
-Numeric bounds must be finite JSON numbers (booleans/strings rejected). The pilot cannot relax the reference envelope, unplanned-contact check, source actuator limits or collision guards. The 4 N reference envelope is not presented as a vendor absolute force rating. Existing direct Python APIs are unchanged except an optional keyword-only contact_stable_s with default zero.
+## Reference execution policy and safety
 
-## Explicit limitations and failures
+The existing controller owns speed 0.008 m/s, max_displacement 0.045 m, max_load 4 N, max_object_drift 0.015 m and timeout 8 s. The resolver passes only operands and contact_dwell_s; it no longer maps Agent constraints to guard parameters. Deadline includes acquisition and dwell. Load/drift/travel/deadline, collision, source joint/actuator and backend checks are retained.
 
-Unknown tool/argument/constraint/termination or unsupported scene region: NOT_SUPPORTED. Unknown observed object or invalid numeric/envelope shape: PRECONDITION_FAILED at transport validation. Runtime acquisition, collision, overload, drift and deadline keep their existing FailureClass values. Validation is completed before motion. A failed request is never substituted with a different operation or mock backend.
+4 N is a reference load guard, not a vendor absolute hardware force limit. Adapter capability answers whether observations/groups/operations are available; it does not own controller defaults. Hard safety comes from existing source model/backend/fault protections and cannot be overridden.
 
-Direction vectors, new target regions, internal gains/speeds and unimplemented draft fields are not accepted. SHAPE_HAND still accepts aperture_m/clearance_m; MAINTAIN_GRASP still accepts duration_s. ESTABLISH_GRASP and BREAK_CONTACT keep their legacy bare calls in this phase. Arbitrary object selection does not create new scene objects.
+contact_dwell starts its timer at the first qualifying contact observation, resets on loss, and uses simulation timestamps. It holds existing prepared servo targets while continuing guard checks. It does not establish force stability, slip stability, stable grasp, wrench feasibility or force closure. Contact loss may resume the original guarded approach; overload, collision and drift retain their existing failures.
 
-The JSONL envelope accepts tool and optional arguments only. Extra envelope fields now fail explicitly rather than being silently ignored. Results retain the existing local SkillOutcome dictionary and canonical observation; the new dwell success adds contact_stable_s to achieved_state. Validation errors retain the existing bridge failure response shape (status, failure_class, failure_detail), without pretending the instruction ran.
+## Explicit rejections and results
+
+Even `{"tool":"MAKE_CONTACT","arguments":{"constraints":{}}}` returns NOT_SUPPORTED before motion. Unknown argument/termination fields and unsupported group regions also return NOT_SUPPORTED. Invalid numeric/type shape or an unknown object returns PRECONDITION_FAILED at request/availability validation. Nonfinite decoder extensions are rejected. Runtime acquisition/deadline/safety FailureClass values are unchanged.
+
+The old pilot termination name has no compatibility alias. Direct Skill execution uses keyword-only contact_dwell_s (default zero); dwell success includes achieved_state.contact_dwell_s. Other SkillOutcome fields and CanonicalObservation are unchanged. Validation failures retain the bridge's existing status/failure_class/failure_detail response without claiming the Skill executed.
+
+The JSONL envelope accepts only tool and optional arguments. SHAPE_HAND and MAINTAIN_GRASP keep their existing narrow arguments; no BREAK_CONTACT or APPLY_WRENCH parameterization is introduced. No operation is silently substituted or sent to a mock/hardware backend.

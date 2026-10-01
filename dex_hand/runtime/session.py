@@ -1,34 +1,16 @@
-"""Existing offline session dispatch and reference scene plans."""
+"""Shared execution session; Adapter and scene binding are injected."""
 
 import math
-from dex_hand.adapters import create_adapter
+from dex_hand.adapters.base import HandAdapter
 from dex_hand.core.outcome import AdapterError, FailureClass, SkillOutcome
 from dex_hand.core.schema import validate_outcome
-from dex_hand.core.types import ContactGroup, PINCH_GROUPS
+from dex_hand.core.scene import ScenePlan
 from dex_hand.core.request import InstructionRequest
 from dex_hand.runtime.requests import MAKE_CONTACT_KEYS, resolve_make_contact
 from dex_hand.modes.maintain_grasp import MaintainGrasp
-from dex_hand.sim.perturbation import MujocoPerturbation
-from dex_hand.sim.worlds import WorldConfig
 from dex_hand.skills.break_contact import BreakContact
 from dex_hand.skills.establish_grasp import EstablishGrasp
 from dex_hand.skills.shape_hand import ShapeHand
-
-
-HANDS = {
-    "wuji": {"groups": PINCH_GROUPS, "aperture": 0.04, "clearance": 0.012},
-    "sharpa": {"groups": PINCH_GROUPS, "aperture": 0.04, "clearance": 0.012},
-    "allegro_v5": {
-        "groups": (ContactGroup("primary", (0, -1, 0)), ContactGroup("opposition", (0, 1, 0))),
-        "aperture": 0.05,
-        "clearance": 0.02,
-    },
-    "robotiq_2f85": {
-        "groups": (ContactGroup("primary", (1, 0, 0)), ContactGroup("opposition", (-1, 0, 0))),
-        "aperture": 0.06,
-        "clearance": 0.012,
-    },
-}
 
 
 ARGUMENT_KEYS = {
@@ -42,16 +24,12 @@ ARGUMENT_KEYS = {
 }
 
 
-class Session:
-    def __init__(self, hand):
-        self.hand = hand
-        self.plan = HANDS[hand]
-        options = {"backend": "mujoco"}
-        if hand in ("wuji", "sharpa"):
-            options["config"] = WorldConfig()
-        self.adapter = create_adapter(hand, **options)
-        self.probe = MujocoPerturbation(self.adapter)
-        self.mode = MaintainGrasp(self.adapter)
+class RuntimeSession:
+    def __init__(self, *, adapter: HandAdapter, scene_plan: ScenePlan, perturbation=None):
+        self.adapter = adapter
+        self.scene_plan = scene_plan
+        self.probe = perturbation
+        self.mode = MaintainGrasp(adapter)
 
     def observation(self):
         return self.adapter.build_canonical_observation().to_dict()
@@ -66,7 +44,7 @@ class Session:
         if unsupported:
             raise AdapterError(FailureClass.NOT_SUPPORTED,
                                f"unsupported arguments for {name}: {', '.join(sorted(unsupported))}")
-        groups = self.plan["groups"]
+        groups = self.scene_plan.groups
         adapter = self.adapter
         if name == "get_state":
             wait = float(args.get("wait_s", 0))
@@ -82,21 +60,21 @@ class Session:
                       }}
         elif name == "SHAPE_HAND":
             outcome = ShapeHand(adapter).run(
-                "target", groups,
-                aperture=float(args.get("aperture_m", self.plan["aperture"])),
-                clearance=float(args.get("clearance_m", self.plan["clearance"])),
+                self.scene_plan.object_id, groups,
+                aperture=float(args.get("aperture_m", self.scene_plan.aperture)),
+                clearance=float(args.get("clearance_m", self.scene_plan.clearance)),
             )
             result = self._outcome(outcome)
         elif name == "MAKE_CONTACT":
-            resolved = resolve_make_contact(request, adapter, groups)
+            resolved = resolve_make_contact(request, adapter, self.scene_plan)
             result = self._outcome(resolved.execute(adapter))
         elif name == "ESTABLISH_GRASP":
-            result = self._outcome(EstablishGrasp(adapter, self.probe).run("target", groups))
+            result = self._outcome(EstablishGrasp(adapter, self.probe).run(self.scene_plan.object_id, groups))
         elif name == "MAINTAIN_GRASP":
             duration = float(args.get("duration_s", 0.3))
             if not math.isfinite(duration) or duration <= 0:
                 raise ValueError("duration_s must be finite and positive")
-            outcome = self.mode.enter("target", groups)
+            outcome = self.mode.enter(self.scene_plan.object_id, groups)
             if outcome.success:
                 steps = max(1, math.ceil(duration / adapter.dt))
                 for _ in range(steps):
@@ -116,11 +94,12 @@ class Session:
                     self.mode.exit()
             result = self._outcome(outcome)
         elif name == "BREAK_CONTACT":
-            result = self._outcome(BreakContact(adapter).run("target", groups))
+            result = self._outcome(BreakContact(adapter).run(self.scene_plan.object_id, groups))
         else:
             raise ValueError(f"unsupported tool: {name}")
-        return {"tool": name, **result, "observation": self.observation(),
-                "simulation_time_s": float(adapter.data.time)}
+        observation = self.observation()
+        return {"tool": name, **result, "observation": observation,
+                "simulation_time_s": float(observation["timestamp"])}
 
     @staticmethod
     def _outcome(outcome):
@@ -128,6 +107,7 @@ class Session:
         return {"skill_outcome": outcome.to_dict()}
 
     def close(self):
-        self.probe.clear()
+        if self.probe is not None:
+            self.probe.clear()
         if self.mode.active:
             self.mode.exit()

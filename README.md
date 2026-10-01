@@ -4,23 +4,24 @@ DexISA is an offline MuJoCo reference runtime for semantic physical-interaction 
 
 ![Computer instruction set and dexterous-hand Physical Interaction ISA](docs/images/dexisa-isa-comparison.png)
 
-## Architecture and migration
+## Architecture and migration — Phase 2
 
-This repository publishes the Phase 1 reorganization of DexISA from source commit `5429c8e`. It has a fresh publication history; the original repository was accessed read-only. The runtime package remains `dex_hand`; existing controller/physics/evaluation thresholds and the frozen records below are retained.
+This repository contains the Phase 1 reorganization of DexISA from source commit `5429c8e`, followed by a focused Phase 2 repair based on `f830b3d`. It has a fresh publication history; the original repository was accessed read-only. The runtime package remains `dex_hand`; existing controller/physics/evaluation thresholds and the frozen records below are retained.
 
 | Path | Purpose |
 | --- | --- |
-| [spec/](spec/README.md) | Normative ISA entry point and two draft instruction schema extracts |
+| [spec/](spec/README.md) | Implemented MAKE_CONTACT contract and broader historical draft references |
 | dex_hand/core/, skills/, modes/, runtime/ | Shared types and existing reference execution; request resolution/session dispatch |
+| dex_hand/session_factory.py + core/scene.py | Bootstrap chooses the concrete Adapter and ScenePlan, then injects RuntimeSession |
 | dex_hand/adapters/ | Four hand realizations and shared primitives; models/meshes stay external |
 | dex_hand/bridge/ | Thin JSONL transport and CLI |
 | [evaluation/](evaluation/README.md) | A-D tasks, external evaluators, Agent surfaces, shared shield, runners and metrics |
 | pilot/ and dex_hand/evaluators/ | Compatibility imports for existing callers |
 | [docs/experiments/](docs/experiments/) | Original frozen historical records at unchanged paths |
 
-Read [ARCHITECTURE.md](ARCHITECTURE.md), [audit](ARCHITECTURE_AUDIT.md), [parameter classification](PARAMETER_CLASSIFICATION.md), [plan](REFACTOR_PLAN.md) and [migration results](REFACTOR_RESULTS.md).
+Read [ARCHITECTURE.md](ARCHITECTURE.md), [audit](ARCHITECTURE_AUDIT.md), [parameter classification](PARAMETER_CLASSIFICATION.md), [plan](REFACTOR_PLAN.md) and [migration results](REFACTOR_RESULTS.md), and [Phase 2 results](PHASE2_RESULTS.md).
 
-MAKE_CONTACT now accepts bounded task constraints and contact termination through the existing controller; see [implemented request format](docs/MAKE_CONTACT_INTERFACE.md). The bare legacy call remains compatible. Other instructions are not broadly parameterized in Phase 1. Evaluation is an optional consumer, not a runtime dependency.
+MAKE_CONTACT exposes object/group operands and `contact_present` or `contact_dwell` termination through the existing controller; generic Agent-visible constraints are intentionally deferred; see [implemented request format](docs/MAKE_CONTACT_INTERFACE.md). The bare legacy call remains compatible. Runtime receives an injected Adapter and ScenePlan and contains no concrete hand binding. Other instructions are not broadly parameterized in this phase. Evaluation is an optional consumer, not a runtime dependency.
 
 ## Native model experiment progress: POINT in MuJoCo (2026-09-28)
 
@@ -122,7 +123,7 @@ dexisa-mujoco --hand wuji
 # Or: python -m dex_hand.bridge.mujoco_adapter --hand wuji
 ```
 
-Select exactly one of `wuji`, `sharpa`, `allegro_v5`, or `robotiq_2f85`. The bridge is a persistent JSON-lines process: read its `READY` response, then send one JSON object per input line. For example, `{"tool":"describe_capabilities"}` and `{"tool":"get_state"}`. Other dispatchable operations are `SHAPE_HAND`, `MAKE_CONTACT`, `ESTABLISH_GRASP`, `MAINTAIN_GRASP`, and `BREAK_CONTACT`. The current bridge uses one supported-object scene per hand. MAKE_CONTACT accepts the bounded scene-group request described in [docs/MAKE_CONTACT_INTERFACE.md](docs/MAKE_CONTACT_INTERFACE.md); arbitrary objects or new target regions are not supported.
+Select exactly one of `wuji`, `sharpa`, `allegro_v5`, or `robotiq_2f85`. The bridge is a persistent JSON-lines process: read its `READY` response, then send one JSON object per input line. For example, `{"tool":"describe_capabilities"}` and `{"tool":"get_state"}`. Other dispatchable operations are `SHAPE_HAND`, `MAKE_CONTACT`, `ESTABLISH_GRASP`, `MAINTAIN_GRASP`, and `BREAK_CONTACT`. The current bridge uses one supported-object scene per hand. MAKE_CONTACT accepts the object/group/termination request described in [docs/MAKE_CONTACT_INTERFACE.md](docs/MAKE_CONTACT_INTERFACE.md); arbitrary objects or new target regions are not supported.
 
 **Models and meshes are external.** Before starting a hand, configure its model path as described in [docs/ASSETS.md](docs/ASSETS.md). The four environment variables are `WUJI_MJCF`, `SHARPA_MJCF`, `ALLEGRO_V5_MJCF`, and `ROBOTIQ_2F85_MJCF`. Missing model, URDF, or mesh files produce explicit startup errors. The repository does not auto-download vendor assets.
 
@@ -150,4 +151,4 @@ python -m unittest discover -s tests -v
 python scripts/extract_instruction_schemas.py --check
 ```
 
-The four-hand request test requires all four external models. An unpublished historical cross-hand checksum check explicitly skips when its artifact is absent; this does not count as historical proof. See REFACTOR_RESULTS.md for actual before/after results. These tests make no LLM calls or hardware connections.
+The four-hand request test requires all four external models. An unpublished historical cross-hand checksum check explicitly skips when its artifact is absent; this does not count as historical proof. See PHASE2_RESULTS.md for the current before/after results and Evaluation preservation evidence. These tests make no LLM calls or hardware connections.

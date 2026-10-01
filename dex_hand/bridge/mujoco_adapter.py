@@ -4,7 +4,10 @@ import json
 import sys
 from dex_hand.core.request import InstructionRequest
 from dex_hand.core.outcome import AdapterError
-from dex_hand.runtime.session import Session, HANDS, ARGUMENT_KEYS
+from dex_hand.session_factory import create_mujoco_session, SCENE_PLANS
+
+# Retain the existing bridge startup convenience; runtime construction is injected.
+Session = create_mujoco_session
 
 def emit(value):
     print(json.dumps(value, ensure_ascii=False, default=str), flush=True)
@@ -12,10 +15,10 @@ def emit(value):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--hand", required=True, choices=tuple(HANDS))
+    parser.add_argument("--hand", required=True, choices=tuple(SCENE_PLANS))
     hand = parser.parse_args().hand
     try:
-        session = Session(hand)
+        session = create_mujoco_session(hand)
     except (AdapterError, FileNotFoundError, ValueError) as exc:
         emit({"status": "FAILED", "failure_class": getattr(exc, "failure_class", "NOT_SUPPORTED"),
               "failure_detail": str(exc), "embodiment": hand})

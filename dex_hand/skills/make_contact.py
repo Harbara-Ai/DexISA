@@ -6,14 +6,14 @@ from dex_hand.core.outcome import FailureClass as F
 class MakeContact(Skill):
     @guarded("MAKE_CONTACT")
     def run(self, object_id, groups, speed=.008, max_displacement=.045, max_load=4.,
-            require_all_groups=True, max_object_drift=.015, timeout=8., approach_frame="object", direction=None, *, contact_stable_s=0.):
+            require_all_groups=True, max_object_drift=.015, timeout=8., approach_frame="object", direction=None, *, contact_dwell_s=0.):
         o = self.validate(object_id,groups)
         if speed <= 0 or max_displacement < 0 or max_load <= 0 or timeout <= 0:
             return self.fail(F.PRECONDITION_FAILED,"positive motion/load/time bounds required")
         if direction is not None or approach_frame != "object":
             return self.fail(F.NOT_SUPPORTED,"baseline uses the inward normals of object-frame target regions")
-        if not np.isfinite(contact_stable_s) or contact_stable_s < 0:
-            return self.fail(F.PRECONDITION_FAILED,"contact stability duration must be finite and nonnegative")
+        if not np.isfinite(contact_dwell_s) or contact_dwell_s < 0:
+            return self.fail(F.PRECONDITION_FAILED,"contact dwell duration must be finite and nonnegative")
         required = {g.group_id for g in groups if g.required}
         if not required: return self.fail(F.PRECONDITION_FAILED,"at least one required group needed")
         initial = position(o,object_id)
@@ -28,13 +28,13 @@ class MakeContact(Skill):
             if np.linalg.norm(position(o,object_id)-initial) > max_object_drift:
                 return self.fail(F.OBJECT_DISPLACED,"object moved during guarded approach")
             if (required <= present) if require_all_groups else bool(required & present):
-                if contact_stable_s == 0:
+                if contact_dwell_s == 0:
                     return self.ok(contact_groups=sorted(present),displacements_m=distance)
                 if contact_since is None:
                     contact_since = o.timestamp
-                if o.timestamp-contact_since >= contact_stable_s:
+                if o.timestamp-contact_since >= contact_dwell_s:
                     return self.ok(contact_groups=sorted(present),displacements_m=distance,
-                                   contact_stable_s=o.timestamp-contact_since)
+                                   contact_dwell_s=o.timestamp-contact_since)
                 self.a.step()
                 continue
             contact_since = None

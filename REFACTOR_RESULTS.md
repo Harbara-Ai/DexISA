@@ -1,5 +1,7 @@
 # Phase 1 refactor and migration results
 
+**Status after Phase 2:** the original findings below describe the Phase 1 publication. Current Runtime uses injected Adapter/ScenePlan with external bootstrap; MAKE_CONTACT now exposes object/group operands and contact_present/contact_dwell termination, with no Agent constraints. See [PHASE2_RESULTS.md](PHASE2_RESULTS.md) and [ARCHITECTURE.md](ARCHITECTURE.md) for current APIs. Pilot stability naming below is historical migration context, not a supported alias.
+
 ## Publication and preservation
 
 Source: private Harbara-Ai/DexISA main `5429c8ea06834652a0c1a93f9f9ca0084a18a7a0`. Destination: public Harbara-Ai/DexISA_v2. The owner explicitly requested a fresh code publication without source Git history. No source push, branch, configuration, visibility or file modification was performed. The destination publication has a new root commit attributed to Codex <codex@openai.com>.

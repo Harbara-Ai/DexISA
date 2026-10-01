@@ -17,5 +17,5 @@ dexisa-mujoco = "dex_hand.bridge.mujoco_adapter:main"
 include = ["dex_hand*", "evaluation*", "pilot*"]
 
 [tool.setuptools.package-data]
-dex_hand = ["schema/*.md"]
+dex_hand = ["schema/*.md", "schema/*.json"]
 "dex_hand.adapters" = ["profiles/*.json"]
