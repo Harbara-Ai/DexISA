@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-01",
+  "task": "V sign / 比耶",
+  "embodiment": "Wuji2 right hand",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "model_fallback": false,
+  "fresh_agent_per_interface": true,
+  "same_low_level_interface": true,
+  "gesture_target_supplied_to_agent": false,
+  "automatic_gesture_evaluator": null,
+  "initial_pose_constraint_relaxed_by_user": true,
+  "initial_joint_state_max_abs_delta_rad": 0.1072767972946167,
+  "direct_preceding_reset_time_excluded_from_episode_s": 60.00456929206848,
+  "metrics": {
+    "DEXISA": {
+      "native_response_count": 4,
+      "tool_calls": 4,
+      "state_queries": 1,
+      "episode_wall_time_s": 54.5401778,
+      "native_inference_wall_time_s": 48.3260446,
+      "robot_tool_time_s": 4.1255799,
+      "motion_command_interval_s": 4.0091139,
+      "enabled_interval_s": 9.5128739,
+      "usage_complete": true,
+      "authoritative_usage": {
+        "totalTokens": 43797,
+        "inputTokens": 42766,
+        "cachedInputTokens": 23168,
+        "outputTokens": 1031,
+        "reasoningOutputTokens": 810,
+        "cacheWriteInputTokens": 0
+      },
+      "human_gesture_judgement": "SUCCESS",
+      "episode_count": 1,
+      "motion_call_count": 1,
+      "motion_tool": "SHAPE_HAND",
+      "usage_audit_passed": true,
+      "runtime_error_summary": "VELOCITY_LIMIT after SDK disable request; gesture success judged separately by human"
+    },
+    "DIRECT": {
+      "native_response_count": 5,
+      "tool_calls": 5,
+      "state_queries": 1,
+      "episode_wall_time_s": 84.0660696,
+      "native_inference_wall_time_s": 77.7990545,
+      "robot_tool_time_s": 4.6086181,
+      "motion_command_interval_s": 4.5158492,
+      "enabled_interval_s": 27.9115979,
+      "usage_complete": true,
+      "authoritative_usage": {
+        "totalTokens": 55528,
+        "inputTokens": 53926,
+        "cachedInputTokens": 27648,
+        "outputTokens": 1602,
+        "reasoningOutputTokens": 1117,
+        "cacheWriteInputTokens": 0
+      },
+      "human_gesture_judgement": "SUCCESS",
+      "episode_count": 1,
+      "motion_call_count": 2,
+      "motion_tool": "set_joint_targets",
+      "usage_audit_passed": true,
+      "runtime_error_summary": "VELOCITY_LIMIT after SDK disable request; gesture success judged separately by human"
+    }
+  },
+  "differences": {
+    "direct_minus_dexisa_total_tokens": 11731,
+    "direct_total_tokens_percent_more": 26.78493960773569,
+    "direct_minus_dexisa_episode_wall_s": 29.525891800000004,
+    "direct_episode_wall_percent_more": 54.13603877176947
+  },
+  "usage_source": "Authoritative thread/tokenUsage/updated total cross-checked with sum of rawResponse/completed usage; both audits passed.",
+  "timing_note": "Episode wall excludes setup/reset/user confirmation wait. Motion command interval is not measured physical movement time. Inference/tool times are components of episode wall and are not additional wall time.",
+  "publication_scope": "Aggregate experiment results only; original joint/SDK states, tool arguments and raw runtime traces remain in the local archive.",
+  "comparison_limits": "One measured episode per interface and operator-accepted different starting poses; these observations do not establish comparative performance."
+}
