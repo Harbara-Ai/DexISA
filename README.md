@@ -127,7 +127,7 @@ Select exactly one of `wuji`, `sharpa`, `allegro_v5`, or `robotiq_2f85`. The bri
 
 **Models and meshes are external.** Before starting a hand, configure its model path as described in [docs/ASSETS.md](docs/ASSETS.md). The four environment variables are `WUJI_MJCF`, `SHARPA_MJCF`, `ALLEGRO_V5_MJCF`, and `ROBOTIQ_2F85_MJCF`. Missing model, URDF, or mesh files produce explicit startup errors. The repository does not auto-download vendor assets.
 
-This package is simulation-only. It contains no Wuji real-hardware transport, SDK, device connection, or live control path. A successful simulated Skill outcome does not establish free-space force closure or real-hardware safety. Reproducible simulation requires the versions and source files listed in the asset guide.
+The installed CLI runs offline MuJoCo. Optional real-adapter source is published in [wuji_real.py](dex_hand/adapters/wuji_real.py) (legacy transport/profile backend) and [wuji2_real.py](dex_hand/adapters/wuji2_real.py) (shared-driver pilot); both expose `WujiRealAdapter`. The pilot module retains `Wuji2RealAdapter` as a compatibility alias. Real use requires the caller-supplied external driver or legacy engineering modules, SDK transport and profiles; these dependencies are documented in the modules. Importing either module does not connect to or move hardware. A successful simulated Skill outcome does not establish free-space force closure or real-hardware safety. Reproducible simulation requires the versions and source files listed in the asset guide.
 
 ## Repository contents
 
@@ -155,7 +155,7 @@ The four-hand request test requires all four external models. An unpublished his
 
 ## Wuji2 real-hardware pilot: V sign (2026-10-01)
 
-One fresh Agent per interface made a V sign (比耶) on the same real Wuji2 right hand, using **gpt-6.1-sol / xhigh**, no model fallback, and the same low-level SDK driver. DexISA exposed generic finger-shaping operands; Direct exposed native joint targets. Neither Agent received a V-sign target or prior Agent history. The operator judged both physical gestures **successful**; there was no automatic gesture evaluator. The live adapter and external Wuji driver used for this pilot remain local extensions.
+One fresh Agent per interface made a V sign (比耶) on the same real Wuji2 right hand, using **gpt-6.1-sol / xhigh**, no model fallback, and the same low-level SDK driver. DexISA exposed generic finger-shaping operands; Direct exposed native joint targets. Neither Agent received a V-sign target or prior Agent history. The operator judged both physical gestures **successful**; there was no automatic gesture evaluator. The Adapter source used for this pilot is now published in [wuji2_real.py](dex_hand/adapters/wuji2_real.py); its shared Wuji driver and engineering assets remain external.
 
 **Starting poses differed:** after a reset did not meet its existing settling criterion, the operator accepted the current pose for Direct. The measured initial joint states differ by up to **0.1072768 rad**. This is one measured episode per interface with different starting poses; it does not establish comparative performance.
 
